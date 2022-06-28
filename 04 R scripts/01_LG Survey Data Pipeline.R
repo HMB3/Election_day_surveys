@@ -37,8 +37,8 @@ write_verbatims_spreadsheet <- FALSE
 # Load functions ----------------------------------------------------------
 
 # Source DAGS production functions
-load("/04 R scripts/Survey_data.RData")
-source('E:/NSW_EC/source/Workspaces/DataAnalytics/Main/R Scripts - Production/Functions.R')
+load('./04 R scripts/Survey_data.RData')
+source('./04 R scripts//EC_Functions.R')
 
 
 source('./04 R scripts/LG_Survey_Table_Functions.R')

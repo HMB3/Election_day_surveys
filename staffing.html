@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Staffing</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.15/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.10.20/jszip.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 200px;" src="logo.svg" /></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">LG21 Local Government Election Staff Survey</a>
+</li>
+<li class="dropdown-header"></li>
+<li class="dropdown-header"></li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Results
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="executive_summary.html">Executive summary</a>
+    </li>
+    <li>
+      <a href="survey_questions.html">Survey questions</a>
+    </li>
+    <li>
+      <a href="whs.html">Work, health &amp; safety</a>
+    </li>
+    <li>
+      <a href="venues.html">Venues</a>
+    </li>
+    <li>
+      <a href="recruitment.html">Recruitment</a>
+    </li>
+    <li>
+      <a href="training.html">Training</a>
+    </li>
+    <li>
+      <a href="staffing.html">Staffing</a>
+    </li>
+    <li>
+      <a href="resources.html">Resources</a>
+    </li>
+    <li>
+      <a href="ro_office.html">RO Office</a>
+    </li>
+    <li>
+      <a href="information_technology.html">Information technology</a>
+    </li>
+    <li>
+      <a href="voting_operations.html">Voting operations</a>
+    </li>
+    <li>
+      <a href="counting_and_results.html">Counting &amp; results</a>
+    </li>
+    <li>
+      <a href="demographics.html">Respondent demographics</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="analysis_index_questions.html">Index questions</a>
+    </li>
+    <li>
+      <a href="analysis_whs.html">Work, health &amp; safety</a>
+    </li>
+    <li>
+      <a href="analysis_venues.html">Venues</a>
+    </li>
+    <li>
+      <a href="analysis_recruitment.html">Recruitment</a>
+    </li>
+    <li>
+      <a href="analysis_training.html">Training</a>
+    </li>
+    <li>
+      <a href="analysis_staffing.html">Staffing</a>
+    </li>
+    <li>
+      <a href="analysis_resources.html">Resources</a>
+    </li>
+    <li>
+      <a href="analysis_information_technology.html">Information technology</a>
+    </li>
+    <li>
+      <a href="analysis_voting_operations.html">Voting operations</a>
+    </li>
+    <li>
+      <a href="analysis_counting_and_results.html">Counting &amp; results</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Staffing</h1>
+
+</div>
+
+
+<p><br />
+<br />
+<br />
+</p>
+<div id="q170" class="section level2">
+<h2><strong>Q170</strong></h2>
+<p><img src="staffing_files/figure-html/M1-1.png" width="960" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q171" class="section level2">
+<h2><strong>Q171</strong></h2>
+<p><img src="staffing_files/figure-html/M2-1.png" width="960" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q172" class="section level2">
+<h2><strong>Q172</strong></h2>
+<p><img src="staffing_files/figure-html/M3-1.png" width="1920" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q173" class="section level2">
+<h2><strong>Q173</strong></h2>
+<p><img src="staffing_files/figure-html/M3a-1.png" width="2304" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q174" class="section level2">
+<h2><strong>Q174</strong></h2>
+<p><img src="staffing_files/figure-html/M3b-1.png" width="960" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q175" class="section level2">
+<h2><strong>Q175</strong></h2>
+<p><img src="staffing_files/figure-html/M3c-1.png" width="1728" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q176" class="section level2">
+<h2><strong>Q176</strong></h2>
+<p><img src="staffing_files/figure-html/M4-1.png" width="1920" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q177" class="section level2">
+<h2><strong>Q177</strong></h2>
+<p><img src="staffing_files/figure-html/M4a-1.png" width="2304" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q178" class="section level2">
+<h2><strong>Q178</strong></h2>
+<p><img src="staffing_files/figure-html/M4b-1.png" width="1920" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="election-support-verbatims" class="section level2">
+<h2><strong>Election Support Verbatims</strong></h2>
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- datatable(Support_verbatims_LUT, -->
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+<!--           caption    = 'Election Support Questions with Verbatim responses', -->
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+<!--   formatStyle(columns = rep(1:length(Support_verbatims_LUT)), fontSize = "12pt") -->
+<!-- ``` -->
+<!-- \ -->
+<div id="htmlwidget-1d5df3d80f5735caaf13" style="width:100%;height:1200px;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1d5df3d80f5735caaf13">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>Verbatim responses to Voting Questions in the Local Election Staff Survey<\/caption>","data":[["OA","SOA","OA","OA","OA","OA","OA","SOA","SOA","OA","EO","OA","SOA","OA","OA","EO","SOAPP","EO","OA","OA","SOAPP","SOA","SOAPP","OA","OA","OA","OA","EO","OA","OA","SOA","SOAPP","SOA","OA","OA","EO","SOAPP","SOAPP","EO","SOA","SOA","OA","SOAPP","OA","OA","OA","OA","OA","SOAPP","PPM","SOA","OA","EO","EO","EO","EO","DPPM","EO","DPPM","OA","EO","PPM","DPPM","EO","EO","EO","EO","DPPM","EO","PPM","PPM","PPM","PPM","DPPM","DPPM","EO","EO","PPM","EO","EO","DPPM","EO","EO","PPM","EO","PPM","EO","EO","EO","DPPM","EO","EO","DPPM","PPM","DPPM","EO","PPM","EO","EO","EO","EO","DPPM"],["Knowledge of the system, problem solving","The staff need much more experience to be able to assist.","By calling me back or answering my emails. General sense most in my life all were on the outer and didnt support, and by doing that, the feeling of alone and not even a chat as awkward as it may have been to offer a chat","I understand the workload and pressures the helpdesk staff were under, but it did take a long time in some instances to receive a return phone call.","I am still to be paid as I was not told that I had to fill out time sheets","I needed to go through the general number. From memory they were not available after hours. I was unable to contact them during business hours due to working full-time. Also, the long wait meant I could not have called them during business hours at work either.","I had an issue with payment on the election day- It took me three weeks to finally get paid from that, and I had to work on it a lot. Initially i was told i hadnt worked on the day, despite having worked on the day, then I had to invovle my count-manager, who also got stonewalled, and then finally i managed to connect with my PPM again, who helped sort the issue out. being told about how I could resolve the issue, rather than be met with a flat \"no\" would have helped a lot.","??","Have HR available or even have an unbiased contact within RO office","Helpdesk are expected to update staff's letter of employment e.g. dates of working...","I recently moved to Moss Vale and finally learnt that there was no election held here. I enquired repeatedly to ask why I could not nominate the Moss Vale election location. I eventually nominated a different shire and was allocated a position in Burrill Lake in the Shoalhaven.","Tax and superannuation were taken out when I provided exemption. It was relayed by HR that this was the norm. Why bother to give exemption then. Annoying and inconvenient.","Assistance was fine, it was more about your having an incorrect super account detail for Aware super which created a default new account for me which I will have to change over once my employment ceases","Just some feedback that if helpdesk could listen rather that being talked over however the issue was resolved in a timely manner.","The wait time to get through was too long. The first attempt to resolve my issue The officer had no idea of my concern","Should be more organised, I was offered a day to work, as I was there to start working, manager said my name is not on the daily work list, I was sent back without any compensation, waisted my day.","Could not get through numerous times.","It needed an IT person to be a little bit more savvy in entering data.","Don't be rude and if you cannot handle the stress of an election dont work","More customer focus and not hand off to other people or send an email with instructions when that was the issue of how to use system in first place.","Less automated menu selections. There were 11. Thatâ€™s a lot. Consider perhaps a dedicated staff helpline.","Much better response time, and better options for transfer of calls to applicable personnel","Timely answers","I asked the helpdesk for assistance with timesheets. My manager would snarl at me to follow instructions(!) on Aurion emails.  The helpdesk kindly confirmed that I had entered all correctly.   I still wasn't paid for that week and I wasn't paid for tea-breaks?!? I was paid the following week, less tea breaks.  I really don't know why, or what happened?!? A bunfight.","The phone extensions are actually connected when internally redirected.","Remuneration processed in two payments. Hours not matching those worked.","Confusing pre-recorded navigation menu made it difficult to know where to navigate directly to IT when I had an IT issue.","Too many steps to resolve one simple issue","More training for them","Work out the solution straight away and communicate with me","The assistance received from the employee helpdesk was polite. To improve time management -  A list of direct numbers to call for specific tasks and responsibilities would greatly save time.","People said they would get back to me and did NOT !","Hvae more knowledgeable persons answering questions","Clearer options when phoning and improved wait time","Could have looked into the issue I raised and contacted me back as promised.","choose good managers","The first person had no clue and referred to the 'mother ship' presenting difficulties to which I responded well you are driving the mother ship not me.  I was told an inquiry would be made and somebody would get back to me.  Nobody did after five days so I called again.   The second person - Cathy - solved the issue in five minutes.","Have less \"own goal\" problems i.e. have a reliable EMA system","Better understanding of relevant issues I.e. taxation  and superannuation contributions","The assistance I received was fantastic.  Waiting for my call to be answered was way too long.","It would help if there was a dedicated line for staff working in Returning Offices. We had only one number we could call and that was the same number that any member of the general public used.  At one point I was told that I had a 50 minute wait time. That's not good enough in my opinion.  There also needs to be a dedicated team of IT experts on hand and RO's need to be able to contact that team directly, 6 days a week.","pay people for hours they do","I am referring to the RO's office: I asked for some materials, was told they would be supplied, and they never were.  This happened twice, so I did not ask any more.","Query re tax being taken from pay. This affected myself and others who were expecting nil tax deduction.  Not answered satisfactorily.  Email re same matter received no response.","have staff who actually want to help not fob you off","I had an issue with my tax, and still do. I was asked to email payroll, but before I could, I got an email saying that I was being taxed correctly. I still donâ€™t understand why I have paid tax when I clearly stated that I wanted to be tax exempt, but I gave up..it was all a bit hard, we were busy, and my accountant will fix it up at tax time. I wasnâ€™t very impressed though.","Need Technical support","Resolve my problem","Answering the phone. Being available on Saturday.","A more understanding and helpful approach would be appreciated.","Pleasant &amp; helpful but had no knowledge &amp; their supervisors  were unable to help or escalate to anyone else in NSWEC unless put in email. Absolutely useless when trying to resolve time critical issues . They were unable to practically assist anyone actually working within RO. They were scripted to only help potential casual elsction day employees or assist with logon issues etc. all lovely but hamstrung by internal processes. They also did not have details of RO contacts for other areas or know which areas to talk to in NSWEC to refer issue to.","Eoi Helpdesk ignored all emails I sent them.  Could not handle allegations of bullying by RSO as was out of their remit/scope.","They were unaware that job offers could be made by phone. I had had two voice messages asking me to call back regarding availability. Both calls came from private numbers and the callers did not leave return numbers. The help desk could not help me with phone number for Hornsby. It was quite frustrating.","My issue was with not receiving pay and it is now 21/12 and still no pay   No one following up","I didn't know that there is the employment helpdesk.  I emailed my issue to where I received the job offer but at I said I didn't receive any reply.","Please follow up with the enquiries instead of saying it would be done soon but nothing has been done.","Did not receive a reply.","I sent email which was not received by my RO.  When she called me regarding training, I was able to update the information on the phone easily and completely resolve the problems.","They could of contacted council officially and requested the parking be arranged.","Need a specific team and head from the start for any questions","I needed to know when I would be informed of my employment. They did not have that information available.","The people I spoke to were useless. It became apparent it is a call centre set up with people that do not have any experience, especially handling inquiries that are more than BASIC. When I was transferred to the \"supervisor\" who seemed to be just as ineffective as the first person I spoke to I just gave up. It's a chain of command of people who are all employed as casuals for this event and apart from basic responses they don't know anything. I was sent an email then another which contradicted what the first email stated.","I am still unable to have my call answered. I can only gey to a recorded message. Very, very poor response.","I had a query in relation to absentee/online voting on voting day ( a problem that occurs EVERY voting day). I was switched to 2 different AEC departments. Both said they had no answer for me &amp; would switch me to the \"right\" department. This turned out to be the same 2 departments. So no answer &amp; no help. So then I contacted my regional manager who also didn't answer my query &amp; informed me I should not have wasted the AEC time with my query. Really ??? And then of course on voting day, approximately 8 people approached us with that exact dilemma.","The phone line was congested. I couldn't get through.","Someone to answer the phone in some reasonable time.   It sounds like there one is directed to the wensite for answers but sometimes one needs to speak to somebody.","Be empowered to be involved with the resolution of issues rather than just re-direct","Appoint people that have an understanding of an election &amp; process at all stages - Who &amp; Why","Despite accessing help to open my employment email it remained in unreadable print. I was told that I was the only person who couldn't open the site and to \"sort it out\". Very shortly after I opened it without any difficulty","I could have received a response to my initial query","The team employed needs to talk to each other as I spoke to one person and messages were not passed on at all and this happened multiple times.","More accurate and honest information. Am still awaiting my training payment (PPM 10-11)","Answer email enquiries quicker, the waiting time on the phone helpline was about 20 minutes, I hung up","call us back asap when that was promised.","I enquired as to why I wasn't aware of pre-polling work (particularly as we found out there were staff shortages) and was advised these positions weren't advertised.  I found this unsatisfactory particularly as I could have worked and gained better experience and knowledge for when I actually worked on polling day at a polling facility.","It's not the assistance, but the pay rates of those working weekends is less than admin during the week, and it's one rate of pay for the day regardless of how many hours you work. How is that fair?","I needed help with downloading the Training Manual and it was not given to me. It was important for me to complete it and it seemed it was not a priority for the consultants on the other end of the phone.","I had a pay related enquiry and was told by my RO to call them for help. They transferred me back to the RO that told me to call the helpdesk so issue still unresolved","We had asked about applicable voting centres for another ward. They provided an answer which turned out to be incorrect. So better resources on their end.","I was told I just had to wait until I got notified re confirmation of need of attendance at the induction day. I set aside the day, lost work elsewhere and no-one got back to me nor answered my call to be rung back.","Payroll should know that when taxation declaration and withholding exemption forms are completed by pensioners claiming tax exemption, NO tax should be deducted.","They were not that helpful did not use empathy and did not show understanding. They were painful","To answer my question about offer of employment. I had to ring 6 times as I had heard nothing back from them with less than 3 weeks to elections date","My identity was questioned, I was left on hold for several minutes and then asked again to confirm my identity. After all this, the helpdesk was not able to help me with my query and had to refer me to the RO.","My problem related to a wrongly 'unticked\" box in the taxation area - Meaning I was taxed $104 when I should not have had to pay any (as an otherwise unemployed pensioner).  Now I am told that I will have to put in a tax return in June ~ Haven't done that in more than 10 years all for $104 (if I am still alive?? I really need that money NOW","Not question my kilometres as I lived a significant distance away or tell me how stressed they are as that is not my problem","We could not even access the helpline via online or via phone call","Not pass me off to the returning officer and vice versa. Actually solve the technical problem  So that I could watch the training modules","It's actually the Staffing &amp; Venues personnel and Payroll office unwilling to assist in a timely manner. As I said, I'm still waiting to be paid. They are hoping this coming Friday (17th Dec) or Monday (19th Dec).","It will probably take an act of Parliament to change the Superannuation procedures.","Employ staff that know what they are doing - RO officer","I left a message on 10.12 after receiving my pay notice and am still waiting on an explanation via callback","More operators (I waited on hold for a very long time).","As a PPM its not my responsibility to chase employee who accept their letter of offer and when I contact them they say they can not attend.  The employment person I spoke to wanted me to complete her HR role to call them back and un-accept the offer.","A positive answer or follow up.","Have more information about whatâ€™s happening with your application","Not dumping me to voicemail after waiting on hold because it was 5pm. Calling me back when I have left a voicemail. Contacting me directly to clarify an issue rather than sending multiple unclear, automated emails.","Reduce the wait time","Being a pensioner I requested help so that I not have tax removed and that the super payment be included in my payment but neither happened","Better response to asking for assistance. Lady was cranky and uninterested.","More understanding and no need to get \"snappy\"","How about paying attention to the TFN Declaration that states pension etc received no tax to be taken out &amp; min threshold claimed and then taking out double the correct rate of tax to leave staff very short changed - and it is NOT COMPULSORY to deduct tax if the above has been filled out according to ATO it is \"an option that the organisation can choose to do to make it easier for their payroll staff!!!\""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Role: <\/th>\n      <th>Q174: How could the assistance you received from the employment helpdesk be improved?<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"Btip","buttons":["csv","excel"],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'12pt'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'12pt'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'12pt'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'12pt'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
