@@ -1,0 +1,376 @@
+---
+title: "Training"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+  #   theme: united           # Many options for theme, this one is my favorite.
+  #   highlight: tango        # Specifies the syntax highlighting style
+  #   css: styles_demography.css
+  # revealjs::revealjs_presentation:
+  #   dev: 'svg'
+  #   css: styles.css
+  #   self_contained: false
+  #   reveal_plugins: ["notes", "search"]
+  #   reveal_options:
+  #     slideNumber: true
+  #     previewLinks: true
+  # word_document:
+  #   always_allow_html: yes
+---
+
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+\
+\
+\
+
+## **`r 'Q20'`**
+```{r Q20, fig.width = 22, fig.height = 6}
+
+ord5_plots_singlegrid[['C1_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q21'`**
+```{r Q21, fig.width = 22, fig.height = 8}
+
+ord3_plots_sub[['C2_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q22'`**
+```{r Q22, fig.width = 22, fig.height = 8}
+
+ord3_plots_sub[['c2_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q23'`**
+```{r Q23, fig.width = 18, fig.height = 5}
+
+ord5_plots_singlegrid[['C3_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q24'`**
+```{r Q24, fig.width = 18, fig.height = 5}
+
+ord5_plots_singlegrid[['c3_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q25'`**
+```{r Q25, fig.width = 20, fig.height = 8}
+
+ord3_plots_sub[['C4_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q26'`**
+```{r Q26, fig.width = 18, fig.height = 12}
+
+plots_y_ordered[['C5_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q27'`**
+```{r Q27, fig.width = 20, fig.height = 8}
+
+ord3_plots_sub[['C6_graph']]
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q28'`**
+```{r Q28, fig.width = 10, fig.height = 8, warning=FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "C7") %>% 
+  .$BaseSize
+
+
+if (Count > 3) {
+  
+  Role <- role_list$C7_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['C7']], 40), cex = 1.4, font = 2)
+  SurveyWordCloud(Survey_data$C7, exclude = c('information', 'training'))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.1, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q29'`**
+```{r Q29, fig.width = 20, fig.height = 12}
+
+ord3_plots_sub[['C8_graph']]
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q30'`**
+```{r Q30, fig.width = 10, fig.align = 'center', fig.height = 6}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "C9") %>% 
+  .$BaseSize
+
+
+if (Count > 3) {
+  
+  Role <- role_list$C9_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2, 3), nrow = 3), heights = c(1, 7, 1))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['C9']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$C9, exclude = c('information', 'training'))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q31'`**
+```{r Q31, fig.width = 15, fig.height = 20}
+
+## Arrange a grid
+C10_graphs = grid.arrange(plot_sub_histograms[['C10_1_graph']], 
+                          plot_sub_histograms[['C10_2_graph']], nrow = 2)
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q32'`**
+```{r Q32, fig.width = 12, fig.height = 8}
+
+plot_histograms[['C11_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q33'`**
+```{r Q33, fig.width = 20, fig.height = 12}
+
+ord3_plots_sub[['C12_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q34'`**
+```{r Q34, fig.width = 20, fig.height = 12}
+
+ord3_plots_sub[['c12_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q35'`**
+```{r Q35, fig.width = 22, fig.height = 8}
+
+ord5_plots_sub[['C13_graph']]
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q36'`**
+```{r Q36, fig.width = 10, fig.height = 8, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "C13a") %>% 
+  .$BaseSize
+
+
+if (Count > 3) {
+  
+  Role <- role_list$C13a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['C13a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$C13a, exclude = c('training', 'day'))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q38'`**
+```{r 38, fig.width = 10, fig.height = 6.5}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "C15") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$C15_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['C15']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$C15, exclude = c('training', 'day'))
+  
+   text(x = 0.5, y = -0.028, Role_caption, cex = 1.1, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Training Verbatims'`**
+
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Training_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Training_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Training_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Verbatim responses to Training Questions in the Local Election Staff Survey',
+          
+           options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Training_verbatim)), fontSize = "12pt")
+
+```
+
+

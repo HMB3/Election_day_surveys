@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Survey questions</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.10/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 200px;" src="logo.svg" /></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">LG21 Local Government Election Staff Survey</a>
+</li>
+<li class="dropdown-header"></li>
+<li class="dropdown-header"></li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Contents
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="executive_summary.html">Executive summary</a>
+    </li>
+    <li>
+      <a href="survey_questions.html">Survey questions</a>
+    </li>
+    <li>
+      <a href="whs.html">Work, health &amp; safety</a>
+    </li>
+    <li>
+      <a href="venues.html">Venues</a>
+    </li>
+    <li>
+      <a href="recruitment.html">Recruitment</a>
+    </li>
+    <li>
+      <a href="training.html">Training</a>
+    </li>
+    <li>
+      <a href="staffing.html">Staffing</a>
+    </li>
+    <li>
+      <a href="resources.html">Resources</a>
+    </li>
+    <li>
+      <a href="ro_office.html">RO Office</a>
+    </li>
+    <li>
+      <a href="information_technology.html">Information technology</a>
+    </li>
+    <li>
+      <a href="voting_operations.html">Voting operations</a>
+    </li>
+    <li>
+      <a href="counting_and_results.html">Counting &amp; results</a>
+    </li>
+    <li>
+      <a href="demographics.html">Respondent demographics</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Survey questions</h1>
+
+</div>
+
+
+<style type="text/css">
+
+.main-container {
+  max-width: 1400px;
+  margin-left: 180px;
+  margin-right: auto;
+
+}
+
+</style>
+<div id="section" class="section level2 tabset tabset-fade">
+<h2 class="tabset tabset-fade"></h2>
+<div id="all-questions" class="section level3">
+<h3>All questions</h3>
+<!-- Set alignment property for the following container -->
+<div align="left">
+<div id="htmlwidget-7a46d8fda13da840e1d7" style="width:95%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7a46d8fda13da840e1d7">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1\" data-max=\"184\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"4\" data-max=\"10089\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>Table of all questions asked<\/caption>","fillContainer":false,"data":[["Intro","WHS","WHS","WHS","WHS","WHS","WHS","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","WHS","WHS","WHS","WHS","WHS","WHS","WHS","WHS Issues","WHS Issues","WHS Issues","WHS Issues","WHS Issues","WHS","WHS","WHS Issues","WHS Issues","WHS Issues","WHS","WHS","WHS Issues","WHS Issues","WHS Issues","Resources","EM/RO Office operations","General Support","General Support","General Support","General Support","General Support","General Support","General Support","Demographics","Demographics","Demographics","Conclusion","Conclusion","Conclusion"],[1,2,3,4,5,6,7,8,10,9,11,12,13,14,15,16,17,18,19,20,31,32,34,33,35,36,37,38,22,21,24,23,25,26,27,28,29,30,39,58,40,41,42,43,44,45,46,47,48,49,50,52,51,53,54,55,56,57,60,62,61,63,64,65,66,67,68,69,70,59,71,73,72,74,75,76,77,78,79,80,81,82,83,84,102,103,104,105,106,107,108,110,109,111,112,113,85,114,115,116,117,118,119,120,121,122,123,124,86,87,125,126,127,88,89,90,91,92,93,94,95,96,97,98,99,100,101,128,141,142,143,144,145,129,131,130,132,133,134,135,136,137,139,138,140,146,147,148,149,150,151,168,168,169,169,152,153,154,155,156,157,158,159,160,161,162,163,164,164,165,166,167,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184],["Do you believe the NSW Electoral Commission conducted the NSW Local Government elections on 4 December fairly and impartially?","Overall, do you believe the organization's response to COVID-19 was appropriate?","How could the COVID-19 response be improved?","Given the NSWEC's enhanced COVID measures (e.g. PPE, instructions, materials etc.), did you feel COVID-safe?","Why did you not feel COVID-safe?","Overall, did electors seem satisfied with the enhanced COVID measures put in place by the NSWEC?","Why did electors seem not satisfied with the COVID measures put in place?","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your satisfaction with specific aspects of your recruitment;","Please rate your satisfaction with specific aspects of your recruitment:","How could the recruitment process be improved?","How did you find out about the opportunity to work at this election? Please select as many as are applicable:","Other than the previous options, do you have any other suggestions for how we promote working at elections?","Are you aware of the NSWEC Diversity and Inclusion Program for the recruitment of election staff?","With regards to the Diversity and Inclusion Program:","How satisfied were you with the staffing application in regards to:","How could the staffing application be improved?","Which, if any, of the following would have helped you with recruitment and staffing? You may select more than one.","Was your letter of employment clear about where you were working and when to arrive?","Overall, how satisfied were you with the training you received for your role?","What is your best estimate of the time it took for you to finish your training? Please provide your estimate for both face-to-face and online training below. Please provide your estimate in minutes.","What is your best estimate for the time you spent reading the manual? Please provide your estimate in minutes.","Was the training provided to you satisfactory in terms of: (2 of 2)","Was the training provided to you satisfactory in terms of: (1 of 2)","Please rate your satisfaction with the face-to-face training received for sorting and counting votes on election night for:","How could the training for sorting and counting be improved?","Please rate your satisfaction with the materials provided to you to train the following staff roles:","Do you have any other suggestions to improve the training provided to you?","Did you receive an induction on your first day on the following topics? (2 of 2)","Did you receive an induction on your first day on the following topics? (1 of 2)","How satisfied were you with the materials provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","Was the manual provided satisfactory in terms of:","What would you like to see more focus on in the manuals?","Was the online training provided satisfactory in terms of:","Is there any additional material that you would like to see in the online training program?","Was the training provided to you at the Returning Officer's office satisfactory in terms of:","How could the face-to-face training provided to you be improved?","Please rate your satisfaction with the stationery and cardboard material that was used by staff members at your venue:","Are there any suggestions you have to improve the supply of materials?","Why were you dissatisfied with the stationery and cardboard material?","In your opinion were the Registers clear and easy to complete?","How can the Registers be improved?","In your opinion were the \"how to issue\" instruction summary cards clear and easy to follow for:","How can the instruction summary cards be improved?","Were any of your ballot paper cartons damaged prior to you receiving them?","How many ballot paper cartons were damaged prior to you receiving them? If you're not sure, please provide your best estimate.","Did the number of ballot paper bundles in each ballot paper carton match the quantity on the label?","How many ballot paper cartons contained an incorrect number of bundles? If you're not sure, please provide your best estimate.","Each bundle of ballot papers should contain 100 ballot papers. At your venue, did any ballot paper bundles or pads contain an incorrect number of ballot papers?","How many ballot paper bundles or pads contained an incorrect number of ballot papers? If you're not sure, please provide your best estimate.","Did your polling place run out of any of the following:","Did any of your polling places run out of any of the following:","Can you please elaborate on what you ran out of, and why?","Were the Standard Operation Procedures provided satisfactory in terms of:","How could the Standard Operating Procedures be improved?","Regarding the authorised rolls, please rate your satisfaction in terms of:","How could the authorised rolls be improved?","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","What would improve your office accommodation?","Would you recommend using this Returning Officer's office for future elections?","Please rate your satisfaction with particular aspects of your pre-polling place.","Why were you dissatisfied with the pre-polling place?","Did the accessibility of your venue match with the information available on the website?","Please describe the difference between the information provided on accessibility and the actual accessibility of the venue?","Please rate your satisfaction with particular aspects of your polling place:","Why were you dissatisfied with your polling place?","Did you work in the Returning Officer's office?","Please rate your satisfaction with the procedures for the nomination process in terms of:","Did you have adequate staff to perform the following tasks? (2 of 2)","Did you have adequate staff to perform the following tasks? (1 of 2)","Please rate your satisfaction with the usefulness of the following support tools:","How can we improve the following support tools?","After election day, were your authorised rolls collected by the courier:","Please elaborate on any issues you encountered with the authorised roll collection:","Did you use BallotTrack in your role?","How would you rate your experience with BallotTrack?","Why were you dissatisfied with BallotTrack? Please select all that apply.","With regards to ballot paper delivery, please rate your satisfaction in terms of:","How could the ballot paper delivery be improved?","With regards to the ULDs provided, please rate your satisfaction in terms of:","When you arrived at the polling place, did you receive a briefing?","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","How could the EMA voting systems be improved?","The NSW Electoral Commission issued tablets for use in polling places. Did you use a tablet for:","Were the tablets easy to use for:","In your opinion, what was the busiest time at the polling place?","Did you receive any verbal complaints from electors on the following topics:","Approximately how many verbal complaints did you receive from electors about the following:","Did you hand out the complaints feedback leaflet to any electors?","Did you direct any electors to the complaints feedback form?","What is your estimate of the maximum elector waiting time on election day for the following (in whole minutes):","And what is your estimate of the average elector waiting time on election day for the following (in whole minutes):","Did any electors request information on:","Once at the polling place and before you commenced work, how satisfied were you with the briefing given to you on your duties?","Did any electors request to see the candidate information sheet booklet?","Did you call the enrolment hotline during election day?","Was the enrolment hotline able to resolve your issue?","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","How could the Returning Officers' bulletins be improved?","Please rate your satisfaction with the ROSO Support Centre in regards to:","How could the support provided by the ROSO Support Centre be improved?","On election day, were you aware of any problems with candidate workers who were:","And did you notice any of these issues with electoral material?","Did you direct anyone to the online complaints feedback form due to electoral materials?","Do you believe polling place managers should be given authority to ask a person to stop handing out electoral material or to remove electoral material or a poster:","How could the briefing given to you be improved?","Did you work at any point marking electors off the authorised roll?","Please rate your satisfaction with the process for the Daily Account of Pre-Poll Ballot Papers:","How could the process for the Daily Account of Pre-Poll Ballot Papers be improved?","On average, how long did you spend filling out the Daily Account of Pre-Poll Ballot Papers per night? Please provide your estimate in minutes.","Did your manager give you a briefing on how to properly mark off the authorised roll?","Did you find the instructions in the authorised roll folder useful?","Were the ballot papers provided to your venue in good condition? A ballot paper in good condition would be unblemished and smooth.","If no, please elaborate:","At your polling place:","Can you please elaborate on the issue you had with your polling place:","If you encountered any accidents or incidents, did you feel adequately prepared for managing it/them?","What did you need in order to feel better prepared?","Please rate your satisfaction with your staff in terms of:","Can you please elaborate on the issues you had with your staff:","Please rate your satisfaction with these aspects of managing pre-polling places:","How could the management of pre-polling places be improved?","Please rate your satisfaction with your staff at pre-polling places in terms of:","Can you please elaborate on the issues you had with your staff at pre-polling places:","Did you participate in the counting of votes on election night?","Did the scrutineers:","At the end of election night, how much time do you estimate the check-in process took from when you arrived at the Returning Officer's office to when all materials were signed over and returned? Please provide your estimate in minutes.","While doing the check-in process, how long did you have to wait for help? Please provide your estimate in minutes.","Was the Returns of Materials form easy to use?","Were ULDs containing ballot papers able to be delivered directly into and out of your venue without being broken/assembled outside the premise?","Did you receive training on these aspects of the counting of the votes?","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","Did you use the following material when learning how to count the votes on election night?","How would you rate your satisfaction with the following material in learning how to count votes on election night?","Did you show the 'sort and count' video to election officials before the start of sorting and counting ballot papers?","Were you shown the 'sort and count' video by your manager before the start of sorting and counting ballot papers?","How would you rate the efficiency of the count process on election night (taking into account such issues as the preparedness of the manager, the organisation of tasks, and the amount of downtime)?","Did you participate in the Check Count of votes in the RO office?","Did you receive training on these aspects of the Check Count?","How would you rate your satisfaction with the training you received for the Check Count?","Did you use the following material when learning the Check Count?","How would you rate your satisfaction with the following material in learning the Check Count process?","Please rate your satisfaction of the election homepage in terms of:","How could the election homepage be improved?","Did you call the ROSO Support Centre about an IT issue?","Please rate your satisfaction with the assistance you received from the IS Service Desk in terms of:","How could the IS Service Desk be improved?","At any point, were you the only person working at your place of work?","Approximately what time did you finish work on election day? If you're not sure, please provide your best estimate.","If you did not work on election day, please click below:","Are there any other work health and safety issues that you wish to bring to our attention?","If yes, please elaborate:","Roughly how long were you the only person? Please give your best estimate in minutes.","Why were you the only person at the venue?","Throughout your time working for the Commission, did you have approximately one half an hour break every five hours?","Did you ever work a shift that was longer than ten hours, not including election day?","Roughly how many shifts did you work that were longer than ten hours?","Did you ever work more than six consecutive days?","Did you work late on election day and have to start early on Sunday morning?","On election day, did you have two half hour breaks and two 15 minute breaks at some point during the day?","Please estimate the total time you had for breaks during election day. Please provide your best estimate in minutes.","Did you use the break planner provided?","Did the break planner help you in allocating breaks to staff?","What could be done to improve the break planner?","Approximately what time did you finish counting on election night? If you're not sure, please provide your best estimate.","If you didn't do any counting on election night, please click below:","How long did you have to drive to get to your nominated material drop off point? Please give your answer in minutes:","Approximately what time did you deliver the materials to your nominated material drop off point? If you're not sure, please provide your best estimate.","Approximately what time did you get home after delivering the materials to your nominated material drop off point? If you're not sure, please provide your best estimate.","Please provide any feedback in relation to your experience with logistics-related matters:","Were there any areas where you would have liked more support in dealing with candidates?","Did you contact the employment helpdesk?","Can you please rate your satisfaction with the employment helpdesk in regards to:","How could the assistance you received from the employment helpdesk be improved?","How long did you spend on the phone with the employment helpdesk?","Were you referred to the payroll helpdesk?","Could you please rate your satisfaction with the payroll helpdesk in regards to:","How long did you spend on the phone with the payroll helpdesk?","We now have a few demographic questions about you to assist in our analysis. What is your gender?","What is your age?","What is your current employment status?","Would you work for the NSW Electoral Commission again at future elections?","Why would you not be willing to work for the NSW Electoral Commission at future elections?","Why would you like to work for the NSW Electoral Commission at future elections?"],[10089,10089,279,10089,221,10089,152,10089,10052,37,660,10052,6723,37,34,37,11,37,7818,10052,8989,2113,37,37,1417,176,37,10045,1178,1178,37,9110,9147,9144,9816,9768,2349,579,8874,10036,603,1251,98,7824,602,2150,49,2234,385,2234,856,1662,30,612,37,8,8911,637,627,588,37,276,37,121,49,2113,129,2113,770,942,37,614,517,37,5,25,5,1059,147,11,37,5,158,6761,1178,122,9931,2312,8874,8873,711,1130,7333,2113,2113,5687,6350,6761,2113,201,37,5,37,9,8911,2150,2150,2150,181,6761,121,9,121,5348,5346,2113,4,2543,396,2271,105,1130,96,37,6,121,13,7818,2228,1130,1130,1130,158,7379,5302,7379,4978,2203,7326,7379,1057,347,242,345,207,37,5,37,35,5,10089,8511,209,10089,1307,286,247,1215,1215,168,1215,1215,8874,1156,1251,1124,86,9615,525,1130,1130,1130,1048,37,10052,1217,102,1209,37,8,8,10089,10089,10089,10089,109,9506]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Topic<\/th>\n      <th>Question<\/th>\n      <th>QuestionText<\/th>\n      <th>n = <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":100,"dom":"tip","scrollY":true,"autoWidth":true,"columnDefs":[{"width":"150px","targets":0},{"width":"50px","targets":[1,3]},{"className":"dt-right","targets":[1,3]}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="all-satisfaction-responses" class="section level3">
+<h3>All ‘satisfaction’ responses</h3>
+<div id="htmlwidget-deec7817bc0f7b1ad37c" style="width:98%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-deec7817bc0f7b1ad37c">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"8\" data-max=\"177\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"40.54%\" data-max=\"100.00%\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.00%\" data-max=\"48.77%\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.00%\" data-max=\"40.00%\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"5\" data-max=\"10052\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>Table of all responses to satisfaction questions<\/caption>","fillContainer":false,"data":[["Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Recruitment","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Training","Resources","Resources","Resources","Resources","Resources","Resources","Resources","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","Venues","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","EM/RO Office operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Voting Operations","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","Vote Counting","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","IT and Tech Issues","General Support","General Support","General Support","General Support","General Support","General Support"],[8,8,8,8,8,8,8,10,10,10,10,9,9,9,9,9,16,16,16,20,20,20,20,20,20,35,35,35,37,37,37,24,23,23,23,23,23,23,39,39,39,39,56,56,56,60,60,60,60,60,60,60,60,60,60,60,62,62,62,62,62,62,62,61,61,61,61,61,61,61,61,61,61,61,65,65,65,65,65,65,65,65,65,65,65,69,69,69,69,69,69,69,69,69,69,69,71,71,71,71,71,74,74,74,74,74,79,79,79,79,81,81,81,81,83,83,83,102,102,102,102,102,85,85,117,117,117,117,117,117,119,119,119,119,119,119,119,119,119,119,125,125,96,96,96,96,98,98,98,98,100,100,100,100,131,131,131,131,131,132,132,132,132,135,135,135,139,139,139,139,139,140,140,140,140,146,146,146,146,149,149,149,173,173,173,177,177,177],["Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your overall satisfaction with the recruitment process run by the NSW Electoral Commission for this election:","Please rate your satisfaction with specific aspects of your recruitment;","Please rate your satisfaction with specific aspects of your recruitment;","Please rate your satisfaction with specific aspects of your recruitment;","Please rate your satisfaction with specific aspects of your recruitment;","Please rate your satisfaction with specific aspects of your recruitment:","Please rate your satisfaction with specific aspects of your recruitment:","Please rate your satisfaction with specific aspects of your recruitment:","Please rate your satisfaction with specific aspects of your recruitment:","Please rate your satisfaction with specific aspects of your recruitment:","How satisfied were you with the staffing application in regards to:","How satisfied were you with the staffing application in regards to:","How satisfied were you with the staffing application in regards to:","Overall, how satisfied were you with the training you received for your role?","Overall, how satisfied were you with the training you received for your role?","Overall, how satisfied were you with the training you received for your role?","Overall, how satisfied were you with the training you received for your role?","Overall, how satisfied were you with the training you received for your role?","Overall, how satisfied were you with the training you received for your role?","Please rate your satisfaction with the face-to-face training received for sorting and counting votes on election night for:","Please rate your satisfaction with the face-to-face training received for sorting and counting votes on election night for:","Please rate your satisfaction with the face-to-face training received for sorting and counting votes on election night for:","Please rate your satisfaction with the materials provided to you to train the following staff roles:","Please rate your satisfaction with the materials provided to you to train the following staff roles:","Please rate your satisfaction with the materials provided to you to train the following staff roles:","How satisfied were you with the materials provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","How satisfied were you with the manual provided to you for training purposes?","Please rate your satisfaction with the stationery and cardboard material that was used by staff members at your venue:","Please rate your satisfaction with the stationery and cardboard material that was used by staff members at your venue:","Please rate your satisfaction with the stationery and cardboard material that was used by staff members at your venue:","Please rate your satisfaction with the stationery and cardboard material that was used by staff members at your venue:","Regarding the authorised rolls, please rate your satisfaction in terms of:","Regarding the authorised rolls, please rate your satisfaction in terms of:","Regarding the authorised rolls, please rate your satisfaction in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with your office accommodation in terms of:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office;","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with the furniture and materials for the Returning Officer's office:","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your pre-polling place.","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with particular aspects of your polling place:","Please rate your satisfaction with the procedures for the nomination process in terms of:","Please rate your satisfaction with the procedures for the nomination process in terms of:","Please rate your satisfaction with the procedures for the nomination process in terms of:","Please rate your satisfaction with the procedures for the nomination process in terms of:","Please rate your satisfaction with the procedures for the nomination process in terms of:","Please rate your satisfaction with the usefulness of the following support tools:","Please rate your satisfaction with the usefulness of the following support tools:","Please rate your satisfaction with the usefulness of the following support tools:","Please rate your satisfaction with the usefulness of the following support tools:","Please rate your satisfaction with the usefulness of the following support tools:","How would you rate your experience with BallotTrack?","How would you rate your experience with BallotTrack?","How would you rate your experience with BallotTrack?","How would you rate your experience with BallotTrack?","With regards to ballot paper delivery, please rate your satisfaction in terms of:","With regards to ballot paper delivery, please rate your satisfaction in terms of:","With regards to ballot paper delivery, please rate your satisfaction in terms of:","With regards to ballot paper delivery, please rate your satisfaction in terms of:","With regards to the ULDs provided, please rate your satisfaction in terms of:","With regards to the ULDs provided, please rate your satisfaction in terms of:","With regards to the ULDs provided, please rate your satisfaction in terms of:","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","Please rate your satisfaction with the usability of the EMA voting systems in terms of:","Once at the polling place and before you commenced work, how satisfied were you with the briefing given to you on your duties?","Once at the polling place and before you commenced work, how satisfied were you with the briefing given to you on your duties?","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the Returning Officers' bulletins in terms of:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the ROSO Support Centre in regards to:","Please rate your satisfaction with the process for the Daily Account of Pre-Poll Ballot Papers:","Please rate your satisfaction with the process for the Daily Account of Pre-Poll Ballot Papers:","Please rate your satisfaction with your staff in terms of:","Please rate your satisfaction with your staff in terms of:","Please rate your satisfaction with your staff in terms of:","Please rate your satisfaction with your staff in terms of:","Please rate your satisfaction with these aspects of managing pre-polling places:","Please rate your satisfaction with these aspects of managing pre-polling places:","Please rate your satisfaction with these aspects of managing pre-polling places:","Please rate your satisfaction with these aspects of managing pre-polling places:","Please rate your satisfaction with your staff at pre-polling places in terms of:","Please rate your satisfaction with your staff at pre-polling places in terms of:","Please rate your satisfaction with your staff at pre-polling places in terms of:","Please rate your satisfaction with your staff at pre-polling places in terms of:","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","How would you rate your satisfaction with the training you received for the counting of the votes on election night?","How would you rate your satisfaction with the following material in learning how to count votes on election night?","How would you rate your satisfaction with the following material in learning how to count votes on election night?","How would you rate your satisfaction with the following material in learning how to count votes on election night?","How would you rate your satisfaction with the following material in learning how to count votes on election night?","How would you rate the efficiency of the count process on election night (taking into account such issues as the preparedness of the manager, the organisation of tasks, and the amount of downtime)?","How would you rate the efficiency of the count process on election night (taking into account such issues as the preparedness of the manager, the organisation of tasks, and the amount of downtime)?","How would you rate the efficiency of the count process on election night (taking into account such issues as the preparedness of the manager, the organisation of tasks, and the amount of downtime)?","How would you rate your satisfaction with the training you received for the Check Count?","How would you rate your satisfaction with the training you received for the Check Count?","How would you rate your satisfaction with the training you received for the Check Count?","How would you rate your satisfaction with the training you received for the Check Count?","How would you rate your satisfaction with the training you received for the Check Count?","How would you rate your satisfaction with the following material in learning the Check Count process?","How would you rate your satisfaction with the following material in learning the Check Count process?","How would you rate your satisfaction with the following material in learning the Check Count process?","How would you rate your satisfaction with the following material in learning the Check Count process?","Please rate your satisfaction of the election homepage in terms of:","Please rate your satisfaction of the election homepage in terms of:","Please rate your satisfaction of the election homepage in terms of:","Please rate your satisfaction of the election homepage in terms of:","Please rate your satisfaction with the assistance you received from the IS Service Desk in terms of:","Please rate your satisfaction with the assistance you received from the IS Service Desk in terms of:","Please rate your satisfaction with the assistance you received from the IS Service Desk in terms of:","Can you please rate your satisfaction with the employment helpdesk in regards to:","Can you please rate your satisfaction with the employment helpdesk in regards to:","Can you please rate your satisfaction with the employment helpdesk in regards to:","Could you please rate your satisfaction with the payroll helpdesk in regards to:","Could you please rate your satisfaction with the payroll helpdesk in regards to:","Could you please rate your satisfaction with the payroll helpdesk in regards to:"],["DPPM","EO","OA","PPM","RO","SOA","SOAPP","Information on duties and\nresponsibilities","Information on employment entitlements","Online Application Process","Timeliness of offer of employment","Information on duties and\nresponsibilities","Information on employment entitlements","Online Application Process","The interview process","Timeliness of offer of employment","Applicant information","Being easy to contact staff","Usability","DPPM","EO","OA","PPM","SOA","SOAPP","Councillor votes","Mayoral votes","Referendum or Poll votes","Deputy polling place managers","Polling place managers","Senior office assistants working at pre-\npoll","RO","DPPM","EO","OA","PPM","SOA","SOAPP","Quality of cardboard material","Quality of stationery","Quantity of cardboard material","Quantity of stationery","Accuracy of electorsâ€™ information","Instructions on how to fill out the\nauthorised roll header page","Number of rolls provided","Accessibility","Ballot paper security","Bathroom facilities","Kitchen facilities","Location","Personal security","Size of venue","Staff Parking","Suitability for pre-polling","Suitability for return of material","Suitability for vote counting","Connectivity","Furniture","Materials","Office computers","Office phones","Printers/scanners","Tablets","Computer network set-up","Connectivity","Email set-up","Furniture","Materials","Office computers","Office phones","Printers/scanners","RO laptop","RO mobile phone","Tablets","Accessibility","Ballot paper security","Bathroom facilities","Condition","Convenience for electors","Kitchen facilities","Lighting","Personal security","Signage","Size","Staff parking","Accessibility","Ballot paper security","Bathroom facilities","Condition","Kitchen facilities","Lighting","Location","Personal security","Signage","Size","Staff parking","Accepting nominations","Ballot paper draw","Council receiving nominations/groups","Overall nomination process","Training the Councils to fulfil their\nrequirements","Account of Ballot Papers workbook","Aurion Payroll System","Election Staffing Application","Roll Tracking Form","Staff Management Tool","EO","OA","RO","SOA","Arriving according to scheduled time","Containing the expected ballot papers","The ballot papers being in good\ncondition","The ballot papers being properly\nlabelled","The quality of the ULDs","The quantity of the ULDs","The security of the ULDs","Count of Spoilt, Discarded and Unused\nBallot Papers","Declaration Vote report","Marking off electors","Provisional declaration vote mark off","Searching for electors on the roll","EO","OA","Ease to read and understand","Frequency","Presentation","Providing additional relevant\ninformation","Providing useful information for other\nstaff","Timeliness","Assistance in solving issues/challenges","Call-back response time","Email communication","Frequency of communication","Issue management","Phone communication","Providing a co-operative and supportive\nenvironment","Technical or complex issues provided in\nan easy manner","The number of people you had to speak to\nin order to have your issue resolved","Webinars","PPM","SOAPP","The number of staff","Their ability to work in a team\nenvironment","Their accuracy and timeliness when\ncompleting tasks","Their level of customer service and\ncommunication skills","Clarity of instructions in pre-poll\nmanual","Communication with senior office\nassistants","Number of pre-polling places","Staffing at pre-polling places","The number of staff","Their ability to work in a team\nenvironment","Their accuracy and timeliness when\ncompleting tasks","Their level of customer service and\ncommunication skills","Informality guidelines","Scrutineer guidelines","Sorting and counting of councillor\nballot papers","Sorting and counting of mayoral ballot\npapers","Sorting and counting of referendum or\npoll ballot papers","Manual","Online training","Pre-count briefing","Video","EO","OA","SOA","Allocation of ballot papers","Batching of ballot papers","Data entry of ballot papers","Registration of totals","Scrutineer guidelines","Face-to-face training","Manual","Online training","Video","Contained useful and timely information","Easy to locate information","Structure of the election homepage was\neasy to navigate and follow","Usefulness of the messages section","Attitude and customer service","Responsiveness","Technical Knowledge","The ability to resolve your problem","The customer service you received","The time it took to receive a response","The ability to resolve your problem","The customer service you received","The time it took to receive a response"],[0.9124,0.9403,0.8778,0.8993,0.7838,0.7739,0.8535,0.9128,0.9291,0.9322,0.9278,0.8919,0.8649,0.8649,0.8379,0.8648,0.6486,0.8649,0.7297,0.8503,0.9007,0.7457,0.8004,0.6,0.7156,0.8286,0.689,0.4686,0.8648,0.8649,0.7838,0.7297,0.7556,0.8542,0.8,0.8746,0.6,0.8017,0.913,0.9267,0.92,0.9128,0.8563,0.876,0.9024,0.8134,0.9107,0.8325,0.6507,0.9075,0.9059,0.9043,0.6794,0.7368,0.8278,0.8661,0.6497,0.784,0.8351,0.7807,0.5221,0.5765,0.5561,0.7297,0.7568,0.7838,0.8649,0.946,0.8379,0.7297,0.8108,0.946,0.8649,0.8378,0.9091,0.9009,0.9338,0.9339,0.8099,0.8347,0.9257,0.9421,0.8429,0.8843,0.7025,0.8623,0.9338,0.8528,0.9191,0.6389,0.9295,0.9484,0.9068,0.8958,0.9158,0.832,0.7568,0.7027,0.5135,0.7027,0.5135,0.8918,0.919,0.6757,0.6757,0.4054,0.625,0.6625,0.8095,0.7895,0.8649,0.8919,1,1,0.5127,0.5443,0.462,0.64,0.5,0.7759,0.5687,0.7555,0.9039,0.6,0.973,0.919,0.973,0.9189,0.8648,0.7027,0.8649,0.8649,0.8378,0.919,0.8649,0.7838,0.9189,0.7298,0.8379,0.7027,1,0.8793,0.9239,0.9558,0.9274,0.9327,0.8378,0.9189,0.919,0.7838,0.8513,0.9009,0.843,0.9009,0.9026,0.8997,0.9322,0.8906,0.8383,0.9312,0.9482,0.9323,0.9491,0.8537,0.8159,0.9057,0.9054,0.9138,0.908,0.9237,0.901,0.8601,0.8849,0.8808,0.8539,0.9189,0.8108,0.8919,0.6757,0.8571,0.7715,0.8286,0.8496,0.9006,0.8883,0.75,0.875,1],[0.0499,0.0455,0.0787,0.068,0.1622,0.0783,0.1207,0.0585,0.0491,0.0455,0.0454,0.1081,0.0541,0.0811,0.0811,0.0811,0.0811,0.0811,0.0811,0.0978,0.0738,0.1489,0.1095,0.1739,0.1724,0.095,0.2663,0.4877,0.0541,0.0541,0.1622,0.1351,0.1466,0.1163,0,0.0742,0.2261,0.1466,0.0686,0.0519,0.0616,0.0516,0.0981,0.112,0.0732,0.1292,0.0686,0.0813,0.1802,0.0606,0.0797,0.0526,0.2073,0.2153,0.1308,0.0957,0.2126,0.131,0.1395,0.1633,0.4303,0.3656,0.4116,0.1351,0.0541,0.0811,0.1081,0.027,0.1081,0.1622,0.0811,0.0541,0.0541,0.1351,0.0331,0.0496,0.0413,0.0496,0.0826,0.0661,0.0331,0.0331,0.1157,0.0413,0.157,0.0644,0.0497,0.0823,0.0487,0.1202,0.0374,0.0327,0.0767,0.0691,0.0383,0.1065,0.2162,0.1622,0.4324,0.2162,0.4324,0.0541,0.0541,0.1351,0.1622,0.2973,0.375,0.2875,0.1429,0.0526,0.0541,0.0541,0,0,0.4304,0.4177,0.462,0.3251,0.4499,0.1995,0.3879,0.2029,0.0679,0,0,0.0811,0,0,0.0811,0.1892,0.0811,0.0541,0.1351,0.027,0.1081,0.1351,0.0541,0.1892,0.0541,0.2162,0,0.0431,0.0319,0.0265,0.0398,0.0451,0.0811,0.0541,0.0811,0.1081,0.0744,0.0826,0.1405,0.0744,0.0778,0.0934,0.0526,0.0995,0.1525,0.0584,0.044,0.0584,0.043,0.079,0.1115,0.0377,0.0823,0.0552,0.046,0.0636,0.0941,0.1024,0.0848,0.1088,0.1236,0.0541,0.1081,0.0541,0.2973,0.0857,0.1143,0.1143,0.0855,0.0616,0.0698,0.25,0,0],[0.0376,0.0143,0.0436,0.0327,0.0541,0.1478,0.0259,0.0288,0.0218,0.0224,0.0269,0,0.0811,0.0541,0.0811,0.0541,0.2702,0.0541,0.1892,0.0519,0.0254,0.1053,0.0901,0.2261,0.1121,0.0764,0.0447,0.0437,0.0811,0.0811,0.0541,0.1352,0.0977,0.0294,0.2,0.0512,0.1739,0.0517,0.0183,0.0213,0.0184,0.0356,0.0456,0.012,0.0244,0.0574,0.0208,0.0861,0.1691,0.0319,0.0144,0.043,0.1133,0.0478,0.0414,0.0383,0.1377,0.085,0.0255,0.0561,0.0476,0.0578,0.0323,0.1352,0.1892,0.1352,0.027,0.027,0.0541,0.1081,0.1081,0,0.0811,0.027,0.0579,0.0496,0.0248,0.0165,0.1074,0.0992,0.0413,0.0248,0.0414,0.0744,0.1405,0.0733,0.0165,0.0648,0.0322,0.2409,0.0331,0.019,0.0166,0.0351,0.0459,0.0616,0.027,0.1351,0.054,0.0811,0.054,0.054,0.027,0.1892,0.1622,0.2973,0,0.05,0.0476,0.1579,0.0811,0.0541,0,0,0.0569,0.038,0.0759,0.0348,0.0501,0.0246,0.0433,0.0416,0.0282,0.4,0.027,0,0.027,0.0811,0.0541,0.1082,0.0541,0.0811,0.027,0.0541,0.027,0.0811,0.027,0.0811,0.1081,0.0811,0,0.0776,0.0443,0.0177,0.0327,0.0221,0.0811,0.027,0,0.1081,0.0744,0.0165,0.0165,0.0248,0.0196,0.0069,0.0152,0.01,0.0092,0.0105,0.0079,0.0093,0.008,0.0673,0.0726,0.0566,0.0123,0.031,0.046,0.0127,0.005,0.0376,0.0303,0.0104,0.0224,0.027,0.0811,0.0541,0.027,0.0571,0.1143,0.0571,0.065,0.0378,0.0419,0,0.125,0],[982,6881,826,1132,37,115,116,10052,10052,10052,10052,37,37,37,37,37,37,37,37,982,6881,826,1132,115,116,2106,1254,892,37,37,37,37,982,6760,5,1132,115,116,8874,8874,8874,8874,8911,8911,8911,627,627,627,627,627,627,627,627,627,627,627,588,588,588,588,588,588,588,37,37,37,37,37,37,37,37,37,37,37,121,121,121,121,121,121,121,121,121,121,121,2113,2113,2113,2113,2113,2113,2113,2113,2113,2113,2113,37,37,37,37,37,37,37,37,37,37,8,80,21,38,37,37,37,37,158,158,158,1178,1178,1178,1178,1178,6345,5,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,5,116,1130,1130,1130,1130,37,37,37,37,121,121,121,121,6159,4925,6906,4815,3704,3905,5861,5772,4376,6734,592,53,243,290,239,236,202,293,165,193,178,37,37,37,37,35,35,35,1217,1217,1217,8,8,8]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Topic<\/th>\n      <th>Question<\/th>\n      <th>QuestionText<\/th>\n      <th>SubQuestionText<\/th>\n      <th>Satisfied<\/th>\n      <th>Neutral<\/th>\n      <th>Dissatisfied<\/th>\n      <th>n = <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":100,"dom":"tip","scrollY":"100%","autoWidth":true,"columnDefs":[{"width":"150px","targets":0},{"width":"50px","targets":[1,4,5,6,7]},{"className":"dt-right","targets":[1,4,5,6,7]}],"order":[],"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nDTWidget.formatPercentage(this, row, data, 4, 1, 3, \",\", \".\");\nDTWidget.formatPercentage(this, row, data, 5, 1, 3, \",\", \".\");\nDTWidget.formatPercentage(this, row, data, 6, 1, 3, \",\", \".\");\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<!-- Index Calculation -->
+<!-- ===================================== -->
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- Column {data-width = 12} -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- \ -->
+<!-- In the formatted staff survey data table, rows are people (n=1356), and the  -->
+<!-- columns are questions (n = 382). The original data has been transformed, so   -->
+<!-- every staff response (i.e. row) is assgined a numerical value between -1 and 1   -->
+<!-- For example, for five-scale satisfaction questions, transformed values are   -->
+<!-- \ -->
+<!-- Very satisfactory    ~ 1, -->
+<!-- \ -->
+<!-- Satisfactory         ~ 0.5, -->
+<!-- \ -->
+<!-- Neutral              ~ 0, -->
+<!-- \ -->
+<!-- Unsatisfactory       ~ -0.5, -->
+<!-- \ -->
+<!-- Very unsatisfactory  ~ -1    -->
+<!-- \ -->
+<!-- For the questions in other formats (e.g. time hours worked), we use the  -->
+<!-- distribution of values from all respondents for that question. For example  -->
+<!-- for question 93 - time finished, the shortest time people worked was 10 hrs.  -->
+<!-- The median hours worked was 15 hrs (i.e. starting around 8am, and finishing  -->
+<!-- between 10-11pm), and the maximum was 16 hrs. So we assinged the first  -->
+<!-- 'quarter' of the data range (10-14 hrs worked) a value of 1 (positive), the 'middle'  -->
+<!-- of the data range (14-15 hrs) a value of 0 (i.e. neutral) and the last quarter    -->
+<!-- of the data range (15-16 hrs worked) a values of -1 (negative), assuming working  -->
+<!-- longer is a greater WHS risk. -->
+<!-- \ -->
+<!-- After 11pm     ~ -1,    -->
+<!-- 10pm-11pm      ~ 0,        -->
+<!-- 9pm-10pm       ~ 1,       -->
+<!-- 8pm-9pm        ~ 1,       -->
+<!-- 7pm-8pm        ~ 1,          -->
+<!-- 6pm-7pm        ~ 1,          -->
+<!-- During the day ~ 1    -->
+<!-- \ -->
+<!-- Using these numeric values, we then calculated the average numeric index for    -->
+<!-- all questions within each theme. The index values were then aggregated to both    -->
+<!-- the venue (n = 2175) and the district (n = 93). It is these aggregated indexes,    -->
+<!-- ranging between -1 and +1, that we can compare to both the venue and district   -->
+<!-- level workloads.     -->
+<!-- \ -->
+<!-- The indexes have been aggregated into a series of scatterplot matrices. These    -->
+<!-- plot the indexes for each theme at the venue and district level in relation to    -->
+<!-- each other, and also in relation to the voting workload. The variable    -->
+<!-- 'District Workload' is the TotalVotes / Total_projections for each district    -->
+<!-- (**Fig A**). Both variables are proxies for the stress each staff member would be under.    -->
+<!-- \ -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width=10, fig.height=5} -->
+<!-- dist.votes.plot -->
+<!-- ```      -->
+<!-- **Fig A).** Histograms of the difference between projected and total votes at the district level.     -->
+<!-- The remotess categories are taken from the ABS : https://www.abs.gov.au/websitedbs/d3310114.nsf/home/remoteness+structure.     -->
+<!-- \ -->
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

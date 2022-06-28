@@ -1,0 +1,335 @@
+---
+title: "Venues"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+    # theme: united           # Many options for theme, this one is my favorite.
+    # highlight: tango        # Specifies the syntax highlighting style
+  #   css: styles_demography.css
+  # revealjs::revealjs_presentation:
+  #   dev: 'svg'
+  #   self_contained: false
+  #   reveal_plugins: ["notes", "search"]
+  #   reveal_options:
+  #     slideNumber: true
+  #     previewLinks: true
+  # word_document:
+  #   always_allow_html: yes
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+
+\
+\
+\
+
+
+## **`r 'Q60'`**
+```{r Q60, fig.width = 22, fig.height = 15}
+
+if (is.null(ord5_plots_sub[['E1_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['E1_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q61'`**
+```{r Q61, fig.width = 22, fig.height = 15}
+
+if (is.null(ord5_plots_sub[['E2_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['E2_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q62'`**
+```{r Q62, fig.width = 20, fig.height = 12}
+
+
+if (is.null(ord5_plots_sub[['e2_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['e2_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q63'`**
+```{r Q63, fig.width = 10, fig.height = 8.5, fig.align = 'center'}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "E2a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$E2a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['E2a']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$D10, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q64'`**
+```{r fig.width = 20, fig.height = 8.5, fig.align = 'center'}
+
+if(nrow(Survey_data_complete %>%
+        dplyr::filter(!is.na(E3))) > 0) {
+  
+  E3_graph
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q65'`**
+```{r Q65, fig.width = 24, fig.height = 15}
+
+if (is.null(ord5_plots_sub[['E4_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['E4_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q66'`**
+```{r Q66, fig.width = 10, fig.height = 8.5, fig.align = 'center'}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "E4a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$E4_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['E4a']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$D10, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3)
+  
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q67'`**
+```{r Q67, fig.width = 18, fig.height = 8}
+
+plots_yesno[['E5_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q68'`**
+```{r Q68, warning = FALSE, fig.width = 10, fig.height = 8}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "E5a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$E5a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['E5a']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$E5a, c("access", "venue"))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3)
+  
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q69'`**
+```{r Q69, fig.width = 22, fig.height = 15}
+
+ord5_plots_sub[['E6_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q70'`**
+```{r Q70, fig.width = 10, fig.height = 6}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "E6a") %>% 
+  .$BaseSize
+
+
+if (Count > 3) {
+  
+  Role <- role_list$E6a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['E6a']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$E6a, exclude = c('training', 'day'))
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.1, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Venues Verbatims'`**
+
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Venue_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Venue_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Venue_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          # caption    = 'Verbatim responses to Recruitment Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Venue_verbatim)), fontSize = "12pt")
+
+```
+
+
+

@@ -1,0 +1,150 @@
+---
+title: "Vote Counting Questions analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: styles_SG19_survey_font.css
+---
+
+
+
+Index analysis
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The following analysis is based on Vote Counting questions in the SG19 staff survey,
+using only complete responses (n = 1356). The original data has been transformed,
+so every staff response (i.e. row) is assgined an Index score between -1 (negative 
+responses) and 1 (positive responses). The graphs below show that Index scores for 
+questions relating to Vote Counting for each Venue/District (Fig A). Overall, 
+Vote Counting questions scored similarly to other topics - statistical analysis shows that 
+the Vote Counting Index scores are not significantly different to other topics (Fig A). 
+
+\
+
+Within the Vote Counting scores, all Roles gave mainly positive feedback, while Statistical 
+analysis showed that the differences between the Vote Counting Index scores for each 
+role are not significant (). Then we can break the Vote Counting Index scores down by staff 
+demographics, and the geographical remoteness of the Venue/District where staff worked 
+(Fig B). Vote Counting Index scores did not differ by demographics (), indicating the background 
+of SG19 Election Staff did not affect their survey responses (?). Similary, the Vote Counting 
+Index scores did not differ by geographical remoteness ().
+
+\
+
+
+### **Fig A). SG19 Survey Responses, aggregated by District across all Topics(left), and by Role for Vote Counting (right)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 6}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_district_all"]], 
+          boxplots_role_indexes[["bp_district_Role_Counting"]],
+          nrow = 1,
+          label_size = 5, align = 'hv')
+
+```
+
+
+\
+
+### **Fig B). Vote Counting Survey Responses by Demoghraphics (note, categories are not necessarily mutually exclusive)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 8}
+
+## Arrange a grid
+boxplots_combined_facetted_indexes[["bp_district_demography_Counting"]]
+
+```
+
+\
+
+
+### **Fig C). Vote Counting Survey Responses by geographic remoteness**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 8, fig.height = 5}
+
+## Arrange a grid
+boxplots_topic_remoteness_indexes[["Counting"]]
+
+```
+
+\
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+
+
+Index Map
+=====================================
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+### **Fig B). Vote Counting Survey Responses by District**
+
+</br> The map below shows the index of survey reponses for questions relating to Vote Counting for the SG19 Staff Survey.
+</br> See table of contents for details of how the Index was calculated.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width = 20, fig.height = 10}
+
+# latticeView(district_satisfaction_choropleth, 
+#             district_dissatisfaction_choropleth,
+#             
+#             ncol = 2,  sync = "none", sync.cursor = FALSE,
+#             no.initial.sync = TRUE)
+
+district_counting_choropleth
+
+```
+
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+
+Sentiment Analysis
+=====================================
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+<!-- Sentiment Analysis -->
+<!-- ===================================== -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 12} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+
+

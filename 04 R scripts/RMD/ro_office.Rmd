@@ -1,0 +1,296 @@
+---
+title: RO/RO Office operations
+output: 
+  html_document:
+    theme: lumen           
+    highlight: tango
+    css: styles.css
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q71'`**
+```{r Q71, fig.width = 24, fig.height = 12}
+
+if (is.null(ord5_plots_sub[['F1_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['F1_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q72'`**
+```{r Q72, fig.width = 20, fig.height = 8}
+
+if (is.null(ord3_plots_sub[['F2_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['F2_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q73'`**
+```{r fig.width = 20, fig.height = 8}
+
+if (is.null(ord3_plots_sub[['f2_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['f2_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q74'`**
+```{r fig.width = 24, fig.height = 10}
+
+if (is.null(ord5_plots_sub[['F3_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['F3_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+
+\
+\
+\
+
+
+## **`r 'Q76'`**
+```{r Q76, fig.width = 22, fig.height = 6}
+
+ord3_plots_sub[['F4_graph']]
+
+```
+
+\
+\
+\
+
+
+<!-- ## **`r 'Q77'`** -->
+<!-- ```{r fig.width = 10, fig.height = 6} -->
+
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "F4a") %>%  -->
+<!--   .$BaseSize -->
+
+
+<!-- if  (Count > 10) { -->
+
+<!--   Role         <- role_list$F4a_Roles -->
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['F4a']], 40), cex = 2, font = 2) -->
+
+<!--   SurveyWordCloud(Survey_data$F4a, c("candidates", "candidate")) -->
+
+<!--   text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3) -->
+
+<!-- } else { -->
+<!--   print("Insufficient data for this question") -->
+<!-- } -->
+
+
+<!-- ``` -->
+
+<!-- \ -->
+
+
+## **`r 'Q78'`**
+
+```{r Q78, fig.width = 12, fig.height = 6}
+
+plots_yesno[['F5_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q79'`**
+```{r Q79, fig.width = 18, fig.height = 6}
+
+ord5_plots_singlegrid[['F5a_graph']]
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q80'`**
+```{r fig.width = 20, fig.height = 8}
+
+if (is.null(plots_y_ordered[['F5b_graph']]) == FALSE) {
+  
+  plots_y_ordered[['F5b_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q81'`**
+```{r fig.width = 24, fig.height = 8}
+
+if (is.null(ord5_plots_sub[['F6_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['F6_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ## **`r 'Q82'`** -->
+<!-- ```{r fig.width = 10, fig.height = 5} -->
+
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "F6a") %>%  -->
+<!--   .$BaseSize -->
+
+
+<!-- if (Count > 10) { -->
+
+<!--   Role <- role_list$F6a_Roles -->
+
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['F6a']], 40), cex = 1.8, font = 2) -->
+
+<!--   SurveyWordCloud(Survey_data$F6a, exclude = c('training', 'day')) -->
+<!--   text(x = 0.5, y = -0.028, Role_caption, cex = 1.1, font = 3) -->
+
+
+<!-- } else { -->
+<!--   print("No data for this question") -->
+<!-- } -->
+
+
+<!-- ``` -->
+
+\
+\
+\
+
+## **`r 'Q83'`**
+```{r Q83, fig.width = 24, fig.height = 8}
+
+if (is.null(ord5_plots_sub[['F7_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['F7_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'RO Office  Verbatims'`**
+```{r Office_verbatims_LUT, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Office_verbatims_LUT,
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          
+          options      = list(
+            pageLength = 10
+            ,dom       = 'tip')) %>%
+  
+  formatStyle(columns = rep(1:length(Office_verbatims_LUT)), fontSize = "12pt")
+
+```
+
+\
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Office_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          # caption    = 'Verbatim responses to Recruitment Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Office_verbatim)), fontSize = "12pt")
+
+```
+
+

@@ -1,0 +1,94 @@
+---
+title: "Welcome to the staff survey report!"
+pagetitle: Welcome!
+output:
+  html_document:
+    theme: lumen           
+    highlight: tango
+
+---
+
+<style>
+
+.column-left{
+  float: left;
+  width: 35%;
+  text-align: left;
+}
+
+.column-right{
+  float: right;
+  width: 65%;
+  text-align: justify;
+}
+
+}
+
+</style>
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\
+
+
+
+
+<div class="column-left">
+
+\
+
+[1. Executive summary](executive_summary.html)
+
+[2. Survey questions](survey_questions.html)
+
+[3. Work, health & safety](whs.html) 
+
+[4. Venues](venues.html) 
+
+[5. Recruitment](recruitment.html) 
+
+[6. Training](training.html) 
+
+[7. Staffing](staffing.html) 
+
+[8. Resources](resources.html) 
+
+[9. RO Office](ro_office.html) 
+
+[10. Information technology](information_technology.html) 
+
+[11. Voting operations](voting_operations.html) 
+
+[12. Counting & results](counting_and_results.html) 
+
+[13. Respondent demographics](demographics.html)
+
+
+
+
+</div>
+
+
+<div class="column-right">
+
+\
+
+The Data Analytics and Geospatial Services (DAGS) team would like to thank you for exploring this report. Election staff surveys have a consistently high response rate, usually with upward of 10 thousand respondents across seven main job roles. There are currently 184 survey questions.  
+
+While it's great to have lots of responses, collecting such a large, complex data set creates major challenges for timely analysis and dissemination of insights.
+
+Accordingly, we present here an automated report that aims to provide simple results to business users within days of the survey closing. Each page shows responses to individual questions by topic. These question summaries have been augmented by more detailed analyses in March 2022.  
+
+The DAGS team is striving to deliver the most versatile and comprehensive report possible, but inevitably, there may be some bugs remaining.  
+
+If you are able to provide feedback, corrections, or would like to contribute to the report (including suggestions for further analyses), 
+we would be very grateful. Thanks also to the Comms team, our partners in this endeavour, and to all contributing stakeholders.   
+
+You can drop us a line any time via **DAGS_support@elections.nsw.gov.au**
+
+</div>
+

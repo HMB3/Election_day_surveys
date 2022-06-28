@@ -1,0 +1,255 @@
+---
+title: "Respondent demographics"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+\
+\
+\
+
+## **`r 'Staff Age/Gender distributions'`**
+
+\
+\
+
+```{r fig.width = 20, fig.height = 10, fig.align = 'center'}
+
+age_gender_graph <- highchart() %>% 
+  
+  ## Data
+  hc_add_series(Age_distribution, "column", hcaes(x = Age, y = Count, group = Gender)) %>%
+  
+  ## Options for each type of series
+  hc_plotOptions(
+    series = list(
+      showInLegend = FALSE,
+      pointFormat = "{point.y}%"
+    ),
+    column = list(
+      colorByPoint = FALSE
+    )
+  ) %>%
+  
+  ## Axis
+  hc_yAxis(
+    title = list(text = "Number of respondens"),
+    labels = list(format = "{value}")
+  ) %>% 
+  
+  hc_xAxis(categories = unique(Age_distribution$Age)) %>%
+  
+  ## Titles and credits
+  hc_title(
+    text = "Respondent Age distribution"
+  ) %>%
+  
+  hc_subtitle(text = "number of respondents in each age category") %>% 
+  hc_credits(
+    enabled = TRUE, text = "Source: LG21 staffing survey",
+    href = "#",
+    style = list(fontSize = "12px")
+  )
+
+age_gender_graph
+
+```
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 15, fig.align = 'center'}
+
+gender_age_role_facet
+
+```
+
+\
+\
+\
+
+<!-- ```{r fig.width = 24, fig.height = 15} -->
+
+<!-- age_gender_facet -->
+
+<!-- ``` -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+```{r fig.width = 25, fig.height = 15, fig.align = 'center'}
+
+age_role_facet
+
+```
+
+\
+\
+\
+
+
+## **`r 'Staff Background'`**
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+N3_graph
+
+```
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 8, fig.align = 'center'}
+
+background_graph
+
+```
+
+\
+\
+\
+
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Role_language_facet
+
+```
+
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Role_disability_facet
+
+```
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Role_Indigenous_facet
+
+```
+
+\
+\
+\
+
+
+## **`r 'Staff Satisfaction'`**
+
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Gender_satis_facet
+
+```
+
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Age_satis_facet
+
+```
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Indigenous_satis_facet
+
+```
+
+\
+\
+\
+
+```{r fig.width = 24, fig.height = 10, fig.align = 'center'}
+
+Disab_satis_facet
+
+```
+
+\
+\
+\
+
+
+
+## **`r 'Conclusion Verbatims'`**
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Conclusion_verbatims_LUT,
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Conclusion Questions with Verbatim responses',
+          
+          options      = list(
+            pageLength = 10
+            ,dom       = 'tip')) %>%
+  
+  formatStyle(columns = rep(1:length(WHS_verbatims_LUT)), fontSize = "12pt")
+
+```
+
+\
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Conclusion_verbatim_no,
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Verbatim responses to Conclusion Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_WHS_verbatim)), fontSize = "12pt")
+
+```
+

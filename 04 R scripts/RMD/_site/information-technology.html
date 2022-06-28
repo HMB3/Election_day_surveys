@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Information technology</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.10/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Information technology</h1>
+
+</div>
+
+
+<p><br />
+<br />
+<br />
+</p>
+<div id="q146" class="section level2">
+<h2><strong>Q146</strong></h2>
+<p><img src="information-technology_files/figure-html/K1-1.png" width="2112" /></p>
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- ## **Q147** -->
+<!-- ```{r K1a, fig.width = 10, fig.height = 5} -->
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "K1a") %>%  -->
+<!--   .$BaseSize -->
+<!-- if  (Count > 5) { -->
+<!--   Role         <- role_list$K1a_Roles -->
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['K1a']], 40), cex = 2, font = 2) -->
+<!--   SurveyWordCloud(Survey_data$K1a, c("candidates", "candidate")) -->
+<!--   text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3) -->
+<!-- } else { -->
+<!--   print("No data for this question") -->
+<!-- } -->
+<!-- ``` -->
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q148" class="section level2">
+<h2><strong>Q148</strong></h2>
+<p><img src="information-technology_files/figure-html/K2-1.png" width="1920" /></p>
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="q149" class="section level2">
+<h2><strong>Q149</strong></h2>
+<p><img src="information-technology_files/figure-html/K4-1.png" width="2304" /></p>
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- ## **Q150** -->
+<!-- ```{r K4a, fig.width = 10, fig.height = 6} -->
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "K4a") %>% -->
+<!--   .$BaseSize -->
+<!-- if  (Count > 5) { -->
+<!--   Role         <- role_list$K4a_Roles -->
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['K4a']], 40), cex = 2, font = 2) -->
+<!--   SurveyWordCloud(Survey_data$K4a, c("candidates", "candidate")) -->
+<!--   text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3) -->
+<!-- } else { -->
+<!--   print("No data for this question") -->
+<!-- } -->
+<!-- ``` -->
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<div id="it-verbatims" class="section level2">
+<h2><strong>IT Verbatims</strong></h2>
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- datatable(IT_verbatims_LUT, -->
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+<!--           caption    = 'Counting Questions with Verbatim responses', -->
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip') -->
+<!--           ) %>% -->
+<!--   formatStyle(columns = rep(1:length(IT_verbatims_LUT)), fontSize = "12pt") -->
+<!-- ``` -->
+<!-- \ -->
+<div id="htmlwidget-ce8f12c79e792466f32f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ce8f12c79e792466f32f">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>Verbatim responses to Voting Questions in the Local Election Staff Survey<\/caption>","fillContainer":true,"data":[["RO","RO","RO","RO","RO","RO","RO","RO","RO"],["Files were often updated - and these revisions were never communicated to RO's. I had to get into the habit of doing daily searches on each tab on the Election Homepage to make sure we were always using the latest version of a file / form. I would suggest a new feature be adopted where the user can sort / identify updated files easily each day to save time for the RO. Or maybe a central file which gets updated each time a file / form is updated so a RO only has to view that file to quickly ascertain whether any files were updated that given day.    The resource centre content (i.e. FORM.410) was massively out of date. This needs to be improved upon to make these information more reliable and useful.",null,"It's adequate","The whole thing needs ovehauling and focused on outcomes and how to get there not a sea of details.","We could be made more aware of certain sections, not just find out about them by luck.",null,"faq section clearly identified",null,null],[null,"A few incidents occurred in the first 4 weeks:  * F drive was not available on all 3 SOA desktops. It took many weeks to resolve this and wasn't until the end of the 4th week in the RO office that my SOAEM had a working desktop with access to Excel and F drive. This meant she was unable to perform her role effectively during this time. She resorted to bringing in her own laptop to create excel documents, then emailed them to me (RO), I then saved them to F drive and printed them for her as required. This process wasted a lot of time. IS were called nearly every day to fix this issue and it should have been fixed much sooner than 4 weeks into the 10 week election period.  * The abovementioned SOAEM desktop was also the only one connected to the office printer/scanner. This meant that for the first 4 weeks the SOAs/OAs couldn't scan as there was no F drive to save the documents to. All scanning fell to the RO which took valuable time out of their day to perform menial tasks. Larger offices require additional/printers to perform their tasks.",null,null,"The RO could actually be able to talk to them about issues, rather than rely on the ROSO putting in an issue. The ROSO is a point of failure ROs need to be able to talk to IT, Payroll, Candidates, No i nations etc when required, not contact the ROSO and then wait.","Better customer service.   Be more flexible.",null,"Dedicated access number.  Also password reset should be given to RO office for all systems","More technical capability"]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Role: <\/th>\n      <th>Q147: How could the election homepage be improved?<\/th>\n      <th>Q150: How could the IS Service Desk be improved?<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'12pt'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'12pt'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'12pt'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'12pt'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'12pt'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

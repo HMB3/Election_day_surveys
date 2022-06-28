@@ -1,0 +1,119 @@
+---
+title: "Business Unit Index Scatterplots"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    css: styles_SG19_survey_sub_pages.css
+---
+
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+\
+\
+
+# **SOA venue-level response indices vs. workload (1679 SOAs)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_workload[["venue_SOA_load_plot_df"]]
+
+```
+
+\
+\
+
+# **SOAP venue-level response indices vs. workload (2419 SOAPs)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_workload[["venue_SOAP_load_plot_df"]]
+
+```
+
+\
+\
+
+# **EO venue-level response indices vs. workload (9450 EOs)**
+```{r venufig.align = "center", fig.width=25, fig.height=8}
+
+scatterplot_venue_indexes_workload[["venue_EO_load_plot_df"]]
+
+```
+
+\
+\
+
+# **District-level response indices vs. workload (93 Districts)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_workload[["venue_OA_load_plot_df"]]
+
+```
+
+\
+\
+
+
+# **District-level response indices vs. High SES (93 Districts)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_context_HSES[["venue_context_plot_df"]]
+
+```
+
+\
+\
+
+
+# **District-level response indices vs. Low SES(93 Districts)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_context_LSES[["venue_context_plot_df"]]
+
+```
+
+\
+\
+
+
+# **District-level response indices vs. Low SES(93 Districts)**
+```{r venufig.align = "center", fig.width=25, fig.height=5}
+
+scatterplot_venue_indexes_context_CALD[["venue_context_plot_df"]]
+
+```
+
+\
+\
+
+# **Venue-level response index correlations (all 2265 Venues)**
+```{r venufig.align = "center", fig.width=25, fig.height=23}
+
+venue_index_correlations_remote
+
+```
+
+\
+\
+
+# **RO-level response index correlations (all 93 Districts)**
+```{r venufig.align = "center", fig.width=25, fig.height=23}
+
+returning_index_correlations_remote
+
+```
+
+\
+\

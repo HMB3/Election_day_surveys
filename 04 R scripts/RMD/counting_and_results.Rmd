@@ -1,0 +1,316 @@
+---
+title: "Counting & results"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+
+---
+
+
+\
+\
+\
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+
+## **`r 'Q128'`**
+```{r J1, fig.width = 15, fig.height = 8}
+
+plots_yesno[['J1_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q129'`**
+```{r J2, fig.width = 20, fig.height = 8}
+
+ord3_plots_sub[['J2_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q130'`**
+```{r J2a, fig.width = 24, fig.height = 12}
+
+ord5_plots_sub[['J2a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q131'`**
+```{r J3, fig.width = 20, fig.height = 8}
+
+ord3_plots_sub[['J3_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q132'`**
+```{r J3a, fig.width = 20, fig.height = 8}
+
+ord5_plots_sub[['J3a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q133'`**
+```{r J4, fig.width = 15, fig.height = 8}
+
+plots_yesno[['J4_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q134'`**
+```{r J5, fig.width = 15, fig.height = 8}
+
+plots_yesno[['J5_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q135'`**
+```{r J6, fig.width = 18, fig.height = 7}
+
+ord5_plots_singlegrid[['J6_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q136'`**
+```{r J7, fig.width = 15, fig.height = 6}
+
+if (is.null(plots_yesno[['J7_graph']]) == FALSE) {
+  
+  plots_yesno[['J7_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q137'`**
+```{r J8, fig.width = 20, fig.height = 8}
+
+
+if (is.null(ord3_plots_sub[['J8_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['J8_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q137'`**
+```{r J8a, fig.width = 24, fig.height = 10}
+
+if (is.null(ord5_plots_sub[['J8a_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['J8a_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q138'`**
+```{r J9, fig.width = 20, fig.height = 8}
+
+if (is.null(ord3_plots_sub[['J9_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['J9_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q140'`**
+```{r J9a, fig.width = 22, fig.height = 8}
+
+
+if (is.null(ord5_plots_sub[['J9a_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['J9a_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q141'`**
+```{r J10, fig.width = 20, fig.height = 6}
+
+ord3_plots_sub[['J10_graph']]
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q142'`**
+```{r J11, fig.width = 12, fig.height = 8}
+
+plot_histograms[['J11_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q143'`**
+```{r J12, warning = FALSE, fig.width = 12, fig.height = 8}
+
+plot_histograms[['J12_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q144'`**
+```{r J13, fig.width = 15, fig.height = 6}
+
+plots_yesno[['J13_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q145'`**
+```{r J14, fig.width = 15, fig.height = 8}
+
+if (is.null(plots_yesno[['J14_graph']]) == FALSE) {
+  
+  plots_yesno[['J14_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+<!-- ## **`r 'Venues Verbatims'`** -->
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Counting_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Counting_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Survey_Counting_verbatim_no, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+<!--           # caption    = 'Verbatim responses to Recruitment Questions in the Local Election Staff Survey', -->
+
+<!--              options      = list( -->
+<!--             pageLength = 10, -->
+<!--             buttons    = c('csv', 'excel'), -->
+<!--             dom        = 'tip'), -->
+
+<!--           height = '1200px') %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Survey_Counting_verbatim_no)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+

@@ -1,0 +1,888 @@
+---
+title: "Voting operations"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+  #   theme: united           # Many options for theme, this one is my favorite.
+  #   highlight: tango        # Specifies the syntax highlighting style
+  #   css: styles_demography.css
+  # revealjs::revealjs_presentation:
+  #   dev: 'svg'
+  #   self_contained: false
+  #   reveal_plugins: ["notes", "search"]
+  #   reveal_options:
+  #     slideNumber: true
+  #     previewLinks: true
+  # word_document:
+  #   always_allow_html: yes
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q84'`**
+```{r G1, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G1_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q85'`**
+```{r G2, fig.width = 18, fig.height = 6}
+
+ord5_plots_singlegrid[['G2_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q86'`**
+```{r G2a, fig.width = 10, fig.height = 7}
+
+if (all(is.na(Survey_data[,'G2a'])) == FALSE) {
+  
+  Role         <- role_list$G2a_Roles
+  Count        <- base_size_list$G2a_Count
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G2a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$A3a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q87'`**
+```{r G3, fig.width = 15, fig.height = 6}
+
+plots_yesno[['G3_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q88'`**
+```{r G3a, fig.width = 15, fig.height = 6}
+
+plots_yesno[['G3a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q89'`**
+```{r G3b, fig.width = 15, fig.height = 6}
+
+plots_yesno[['G3b_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q90'`**
+```{r G4, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G4_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q91'`**
+```{r G4a, fig.width = 10, fig.height = 6}
+
+if (all(is.na(Survey_data[,'G4a'])) == FALSE) {
+  
+  Role         <- role_list$G4a_Roles
+  Count        <- base_size_list$G2a_Count
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G4a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G4a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q92'`**
+```{r G5, fig.width = 18, fig.height = 6}
+
+ord3_plots_sub[['G5_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q93'`**
+```{r G5a, fig.width = 10, fig.height = 8}
+
+if (all(is.na(Survey_data[,'G5a'])) == FALSE) {
+  
+  Role         <- role_list$G5a_Roles
+  Count        <- base_size_list$G5a_Count
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G5a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G5a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q94'`**
+```{r G6, fig.width = 15, fig.height = 8}
+
+Exception_Handling_Plot <- yesno_plots(plot_list        = "G6",
+                                       survey_data      = Survey_data_complete,
+                                       survey_questions = Survey_questions,
+                                       role_list        = role_list,
+                                       count_list       = BaseCount,
+                                       calc_percent     = TRUE,  
+                                       
+                                       plot_levels  = c("Not Applicable",
+                                                        "No",
+                                                        "Yes"),
+                                       
+                                       plot_colours = c('No'              = 'Coral2', 
+                                                        'Yes'             = 'green4',
+                                                        "Not Applicable"  = 'dodgerblue1'),
+                                       
+                                       ## Set the plot parameters
+                                       tsize     = 30,
+                                       mar       = 1,
+                                       capt_size = 20,
+                                       xsize     = 20,
+                                       ysize     = 20,
+                                       ycol      = 'black',
+                                       lab_size  = 8,
+                                       ylab      = '\nPercent (%)\n',
+                                       xlab      = '')
+
+Exception_Handling_Plot$G6_graph
+
+```
+
+\
+\
+\
+
+## **`r 'Q95'`**
+```{r G6a, fig.width = 10, fig.height = 8.5}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "G6a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$G6a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G6a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G6a, c("candidates", "candidate"))
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q96'`**
+```{r G7, fig.width = 24, fig.height = 8}
+
+ord5_plots_sub[['G7_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q97'`**
+```{r G7a, fig.width = 10, fig.height = 6}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "G7a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$G7a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G7a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G7a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q98'`**
+```{r G8, fig.width = 20, fig.height = 8}
+
+if (is.null(ord5_plots_sub[['G8_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['G8_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+<!-- ## **`r 'Q99'`** -->
+<!-- ```{r G8a, fig.width = 10, fig.height = 6} -->
+
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "G8a") %>%  -->
+<!--   .$BaseSize -->
+
+<!-- if (Count > 10) { -->
+
+<!--   Role         <- role_list$G8a_Roles -->
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['G8a']], 40), cex = 2, font = 2) -->
+
+<!--   SurveyWordCloud(Survey_data$G8a, c("candidates", "candidate")) -->
+
+<!--   text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3) -->
+
+
+<!-- } else { -->
+<!--   print("No data for this question") -->
+<!-- } -->
+
+
+
+<!-- ``` -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+## **`r 'Q100'`**
+```{r G9, fig.width = 24, fig.height = 10}
+
+if (is.null(ord5_plots_sub[['G9_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['G9_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q101'`**
+```{r G9a, fig.width = 10, fig.height = 12}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "G9a") %>% 
+  .$BaseSize
+
+if (Count > 10) {
+  
+  Role         <- role_list$G9a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G9a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G9a, c("staff", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q102'`**
+```{r G12, fig.width = 24, fig.height = 10}
+
+if (is.null(ord5_plots_sub[['G12_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['G12_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q103'`**
+```{r G12a, fig.width = 10, fig.height = 12}
+
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "G12a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$G12a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G12a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$G12a, c("system", "ema"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q104'`**
+```{r G13, fig.width = 18, fig.height = 8}
+
+if (is.null(ord3_plots_sub[['G13_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['G13_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q105'`**
+```{r G13a, fig.width = 18, fig.height = 6}
+
+ord3_plots_sub[['G13a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q106'`**
+```{r G14, fig.width = 18, fig.height = 10}
+
+G14_graph
+
+```
+
+\
+\
+\
+
+## **`r 'Q107'`**
+```{r G15, fig.width = 18, fig.height = 10}
+
+plots_y_ordered[['G15_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q108'`**
+```{r G15a, fig.width = 25, fig.height = 30}
+
+## Arrange a grid
+plot_grid(plot_sub_histograms[['G15a_1_graph']], plot_sub_histograms[['G15a_2_graph']], 
+          plot_sub_histograms[['G15a_3_graph']], plot_sub_histograms[['G15a_4_graph']], 
+          plot_sub_histograms[['G15a_5_graph']], plot_sub_histograms[['G15a_6_graph']], 
+          plot_sub_histograms[['G15a_7_graph']], plot_sub_histograms[['G15a_8_graph']], 
+          nrow = 4,
+          label_size = 12, align = 'hv')
+
+```
+
+\
+\
+\
+
+## **`r 'Q109'`**
+```{r G16, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G16_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q110'`**
+```{r g16, fig.width = 15, fig.height = 8}
+
+plots_yesno[['g16_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q111'`**
+```{r G17, fig.width = 15, fig.height = 20}
+
+## Arrange a grid
+plot_grid(plot_sub_histograms[['G17_1_graph']], 
+          plot_sub_histograms[['G17_2_graph']],
+          nrow = 2,
+          label_size = 12, align = 'hv')
+
+```
+
+\
+\
+\
+
+## **`r 'Q112'`**
+```{r G18, fig.width = 15, fig.height = 20}
+
+## Arrange a grid
+plot_grid(plot_sub_histograms[['G18_1_graph']], 
+          plot_sub_histograms[['G18_2_graph']],
+          nrow = 2,
+          label_size = 12, align = 'hv')
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q113'`**
+```{r G19, fig.width = 18, fig.height = 8}
+
+ord3_plots_sub[['G19_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q114'`**
+```{r G20, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G20_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q115'`**
+```{r G21, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G21_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q116'`**
+```{r G21a, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G21a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q117'`**
+```{r G23, fig.width = 24, fig.height = 12}
+
+if (is.null(ord5_plots_sub[['G23_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['G23_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+<!-- ## **`r 'Q118'`** -->
+<!-- ```{r G23a, fig.width = 10, fig.height = 5} -->
+
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "G23a") %>%  -->
+<!--   .$BaseSize -->
+
+<!-- if (Count > 10) { -->
+
+<!--   Role <- role_list$E2a_Roles -->
+
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['G23a']], 40), cex = 1.8, font = 2) -->
+
+<!--   SurveyWordCloud(Survey_data$G23a, c("candidates", "candidate")) -->
+
+<!--   text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3) -->
+
+
+<!-- } else { -->
+<!--   print("Insufficient data for this question") -->
+<!-- } -->
+
+
+<!-- ``` -->
+
+\
+\
+\
+
+## **`r 'Q119'`**
+```{r G24, fig.width = 22, fig.height = 15}
+
+if (is.null(ord5_plots_sub[['G24_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['G24_graph']]
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+<!-- ## **`r 'Q120'`** -->
+<!-- ```{r G24a, fig.width = 10, fig.height = 6} -->
+
+<!-- Count <- BaseCount %>% -->
+<!--   filter(QuestionNumber == "G24a") %>%  -->
+<!--   .$BaseSize -->
+
+<!-- if (Count > 10) { -->
+
+<!--   Role <- role_list$E2a_Roles -->
+
+<!--   Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50) -->
+<!--   layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4)) -->
+<!--   par(mar = rep(0, 4)) -->
+<!--   plot.new() -->
+<!--   text(x = 0.5, y = 0.5, str_wrap(label_list[['G24a']], 40), cex = 1.8, font = 2) -->
+
+<!--   SurveyWordCloud(Survey_data$G24a) -->
+
+<!--   text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3) -->
+
+
+<!-- } else { -->
+<!--   print("Insufficient data for this question") -->
+<!-- } -->
+
+
+<!-- ``` -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+## **`r 'Q121'`**
+```{r G26, fig.width = 18, fig.height = 10}
+
+ord3_plots_sub[['G26_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q122'`**
+```{r G27, fig.width = 18, fig.height = 10}
+
+ord3_plots_sub[['G27_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q123'`**
+```{r G28, fig.width = 15, fig.height = 8}
+
+plots_yesno[['G28_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q124'`**
+```{r G29, fig.width = 20, fig.height = 8}
+
+ord3_plots_sub[['G29_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q125'`**
+```{r G30, fig.width = 20, fig.height = 6}
+
+if (is.null(ord5_plots[['G30_graph']]) == FALSE) {
+  
+  ord5_plots[['G30_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q126'`**
+```{r G30a, fig.width = 10, fig.height = 7}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "G30a") %>% 
+  .$BaseSize
+
+if (Count > 5) {
+  
+  Role <- role_list$E2a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['G30a']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$G30a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q127'`**
+```{r G31, fig.width = 12, fig.height = 8}
+
+if (is.null(plot_histograms[['G31_graph']]) == FALSE) {
+  
+  plot_histograms[['G31_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Voting Verbatims'`**
+
+<!-- ```{r Voting_Verbatim_Questions, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Operations_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+<!--           caption    = 'Voting Questions with Verbatim responses', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Operations_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+```{r Voting_Verbatim, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Operations_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Verbatim responses to Voting Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Operations_verbatim)), fontSize = "12pt")
+
+```
+

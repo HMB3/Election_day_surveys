@@ -1,0 +1,194 @@
+---
+title: Executive Summary
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+The analysis in this report is based on the results of the Election Staff Survey, following the Local Government 
+Election held on 4th December, 2021. The results use only complete survey responses.  
+
+
+\
+
+# **Response rate** 
+The survey was emailed to around 29 thousand temporary election staff members between 15/12/2021 and 22/12/2021. 
+The overall response rate was approximately `r all_resp_rate` per cent, with `r format(complete_responses, big.mark=",")` completed surveys (a completed survey response rate of `r complete_resp_rate` per cent). The highest response rate was from PPM's (over 50 per cent) and lowest for OA's (less than 20 per cent; see Table 1).   
+
+\
+
+<!-- Set alignment property for the following container -->
+<div align="left">
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA}
+
+datatable(response_rate_role %>% 
+            arrange(desc(ResponseRate)) %>%
+            rename(`ResponseRate_%` = ResponseRate)
+                      
+          # Set width of table in container, requires fillContainer to be set to FALSE
+          ,width = '95%'
+          ,fillContainer = FALSE
+          
+          ,rownames   = FALSE
+          ,extensions = 'Buttons'
+          ,filter     = 'none'
+          ,caption    = 'Table 1: Response rates by role for the LG21 Staff Survey'
+          
+          ,options = list(
+            pageLength = 100
+            ,dom = 't'
+            ,scrollY = TRUE
+            
+            # Control individual column width (requires autoWidth to be set to TRUE)
+            # targets argument refers to column postitions which are zero indexed
+            ,autoWidth = TRUE
+            ,columnDefs = list(list(width = '150px', targets = c(0))
+                               ,list(width = '50px', targets = c(1, 3))
+            )))
+
+```
+</div>
+\
+
+# **Work health safety guidelines** 
+The NSWEC implemented a new suite of WHS guidelines at this election, and the results show that most staff   
+reported compliance with the measures. Figure 1 shows that the vast majority of staff stated they finished   
+work before the mandated 11pm cut-off on election night. Although 12 per cent of respondents had some WHS   
+concerns (Q169), overall, the WHS and COVID-safe measures were well received. Ninety five per cent of   
+respondents were satisfied with the COVID-safe measures (Q2).
+
+\
+
+```{r fig.align = "center", fig.width=20, fig.height=10}
+
+plot_grid(time_histograms[['L10_graph']], 
+          nrow        = 1, 
+          label_size  = 12, 
+          align       = 'hv')
+
+```
+
+**Figure 1.** Number of staff finishing work at different times on Election Day. Each grey bar represents the number of staff 
+finishing at a given time. The red line is the overall median finishing time (the middle value of all the finishing times). This plot shows that the vast 
+majority of staff completed work prior to 11pm on election night.
+
+\
+
+# **Employee sentiment** 
+Election staff overwhelmingly believed the election was run fairly (98%), and would work for the NSWEC at 
+a future election (94%; Figure 2).        
+
+\
+
+```{r fig.align = "center", fig.width=20, fig.height=15}
+
+grid.arrange(plots_yesno[["A1_graph"]],
+             plots_yesno[["N4_graph"]], nrow = 2)
+
+```
+**Figure 2.** Bar charts of overall elector sentiment. 
+
+\
+
+```{r fig.width = 10, fig.height = 8, fig.align='center'}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "N4b") %>% 
+  .$BaseSize
+
+if (Count >= 3) {
+  
+  Role <- role_list$N4b_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['N4b']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$N4b, c("election", "elections"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+**Figure 3.** Word cloud of staff sentiment regarding working at the elections again. 
+
+
+```{r fig.width = 10, fig.height = 8, fig.align='center'}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "N4a") %>% 
+  .$BaseSize
+
+if (Count >= 3) {
+  
+  Role <- role_list$N4a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['N4a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$N4a, c("election", "elections"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+**Figure 4.** Word cloud of staff sentiment regarding not working at the elections again. 
+
+\
+
+# **Overall employee satisfaction** 
+Election staff were generally satisfied with how the election was run, with most questions across all topics having 
+satisfaction ratings greater than 80 per cent, and dissatisfaction ratings less than 10 per cent (see Table of Contents: All satisfaction responses; 
+Figure 5).        
+
+\
+
+```{r fig.align = "center", fig.width=20, fig.height=18}
+
+Overall_satisfaction_graph
+
+```
+
+
+**Figure 5.** Bar-chart of combined satisfaction responses to survey questions across topics. Only 'satisfaction' type questions are included in this plot, and the RO/RO Office topic was only answered by **three respondents**.
+
+\
+
+# **Data use**
+
+
+The results of the LG2101 staff survey can be used to support the continuous improvement of NSWEC election processes. When using the survey 
+results, please feel free to consult with the Data Analytics and Geospatial Services team for help with interpretation and analysis.      
+
+\

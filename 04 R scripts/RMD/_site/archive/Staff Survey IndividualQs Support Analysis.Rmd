@@ -1,0 +1,137 @@
+---
+title: "Support Questions analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: styles_SG19_survey_font.css
+---
+
+
+
+Index analysis
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The following analysis is based on Election Support questions in the SG19 staff survey,
+using only complete responses (n = 1356). The original data has been transformed,
+so every staff response (i.e. row) is assgined an Index score between -1 (negative response)
+and 1 (positive responses). The graphs below show the Index scores for questions 
+realting to Election Support for each Venue/District (Fig A). Overall, Election Support 
+questions scored similarly to all other topics - statistical analysis shows that the Voting 
+Index scores are/aren't significantly different from other topics (Fig A). Only Election 
+managers answered these questions.
+
+\
+
+Then we can break the Election Support Index scores down by staff demographics, and the 
+geographical remoteness of the Venue/District where staff worked (Fig B). Election Support 
+Index scores did not differ by demographics (), indicating the background of SG19 Election 
+Staff did not affect their survey responses (?). Similary, the Election Support scores did 
+not differ by geographical remoteness ().
+
+\
+
+
+### **Fig A). SG19 Survey Responses, aggregated by District across all Topics(left), and by Role for Election Support (right)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 6}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_district_all"]], 
+          boxplots_role_indexes[["bp_district_Role_Support"]],
+          nrow = 1,
+          label_size = 5, align = 'hv')
+
+```
+
+\
+
+### **Fig B). Election Support Survey Responses by Demoghraphics (note, categories are not necessarily mutually exclusive)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 8}
+
+## Arrange a grid
+boxplots_combined_facetted_indexes[["bp_district_demography_Support"]]
+
+```
+
+\
+
+### **Fig C). Election Support Survey Responses by geographic remoteness**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 8, fig.height = 5}
+
+## Arrange a grid
+boxplots_topic_remoteness_indexes[["Support"]]
+
+```
+
+\
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+
+
+Index Map
+=====================================
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+### **Fig B). Election Support Survey Responses by District**
+
+</br> The map below shows the index of survey reponses for questions relating to Election Support for the SG19 Staff Survey.
+</br> See table of contents for details of how the Index was calculated.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width = 20, fig.height = 10}
+
+# latticeView(district_satisfaction_choropleth, 
+#             district_dissatisfaction_choropleth,
+#             
+#             ncol = 2,  sync = "none", sync.cursor = FALSE,
+#             no.initial.sync = TRUE)
+
+district_Support_choropleth
+
+
+```
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+<!-- Sentiment Analysis -->
+<!-- ===================================== -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 12} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+

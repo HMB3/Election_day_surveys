@@ -1,0 +1,103 @@
+
+/*Formatting options to change ::
+
+/* Caption size
+/*
+
+
+/* Whole document : */
+body{
+  font-family: Helvetica;
+  font-size: 14pt;
+}
+
+p.caption {
+  font-size: 14pt;
+  font-style: bold;
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+}
+
+
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-size: 10pt;
+  font-family: Helvetica;
+}
+
+h1 {
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 32px;
+}
+
+h2 {
+  font-weight: bold;
+  font-family: Helvetica;
+  
+
+
+div.footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+	height:30px;
+    background-color: #2b6eda;
+    color: white;
+    text-align: center;
+}
+
+div.main-wrapper {
+    position: relative;
+}
+
+
+div.leaflet-control-attribution{
+	display:none;
+}
+
+div.leaflet-container {
+    background: #0184a9;
+}
+
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+table.ValueBox{
+    background-color: ##ececec;
+	width: 98%;
+	border-spacing: 5px;
+}
+
+table.ValueBox td{
+    background-color: #bd2525;
+    border: solid #ddd 1px;
+    font-size: 25px;
+    height:80px;
+    padding:10px;
+    margin-bottom: 15px;
+    border-radius:15px;
+	color: #f9f9f9;
+}
+
+
+#LocationType {
+
+    padding-left: 20px;
+}
+
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>

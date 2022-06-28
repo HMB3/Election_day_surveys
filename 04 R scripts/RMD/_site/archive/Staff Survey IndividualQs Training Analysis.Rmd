@@ -1,0 +1,141 @@
+---
+title: "Training Questions analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: styles_SG19_survey_font.css
+---
+
+
+
+Index analysis
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The following analysis is based on Training questions in the SG19 staff survey,
+using only complete responses (n = 1356). The original data has been transformed,
+so every staff response (i.e. row) is assgined an Index score between -1 (negative 
+response) and 1 (positive responses). The graphs below show the Index scores for 
+questions realting to Training for each Venue/District (Fig A). Overall for SG19, 
+Training questions scored similarly to other topics - statistical analysis shows that 
+the Training Index scores are not significantly different to other topics (Fig A). 
+
+\
+
+Within the Training scores, all Roles gave mainly positive feedback, while Statistical 
+analysis showed that the differences between the Training Index scores for each 
+role are not significant (). Then we can break the Training Index scores down by staff 
+demographics, and the geographical remoteness of the Venue/District where staff worked 
+(Fig B). Training Index scores did not differ by demographics (), indicating the background 
+of SG19 Election Staff did not affect their survey responses (?). Similary, the Training 
+Index scores did not differ by geographical remoteness ().
+
+\
+
+
+### **Fig A). SG19 Survey Responses, aggregated by District across all Topics(left), and by Role for Training (right)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 6}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_district_all"]], 
+          boxplots_role_indexes[["bp_district_Role_Training"]],
+          nrow = 1,
+          label_size = 5, align = 'hv')
+
+```
+
+
+\
+
+### **Fig B). Training Survey Responses by Demoghraphics (note, categories are not necessarily mutually exclusive)**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 15, fig.height = 8}
+
+## Arrange a grid
+boxplots_combined_facetted_indexes[["bp_district_demography_Training"]]
+
+```
+
+
+\
+
+
+### **Fig C). Training Survey Responses by  and remoteness**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 8, fig.height = 5}
+
+## Arrange a grid
+boxplots_topic_remoteness_indexes[["Training"]]
+
+```
+
+
+\
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+
+
+Index Map
+=====================================
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+### **Fig B). Training Survey Responses by District**
+
+</br> The map below shows the index of survey reponses for questions relating to Training for the SG19 Staff Survey.
+</br> See table of contents for details of how the Index was calculated.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width = 20, fig.height = 10}
+
+# latticeView(district_satisfaction_choropleth, 
+#             district_dissatisfaction_choropleth,
+#             
+#             ncol = 2,  sync = "none", sync.cursor = FALSE,
+#             no.initial.sync = TRUE)
+
+district_Training_choropleth
+
+
+```
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+<!-- Sentiment Analysis -->
+<!-- ===================================== -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 12} -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- Column {data-width = 1} -->
+<!-- ----------------------------------------------------------------------- -->
+
+

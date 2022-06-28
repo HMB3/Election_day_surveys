@@ -1,0 +1,214 @@
+---
+title: "Demography analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: styles_SG19_survey_font.css
+---
+
+
+
+Summary
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+
+\
+
+The following demohgraphic analysis is based on Voting questions in the SG19 staff survey,  
+using only complete responses (n = 1356). These demographic analyses can be used to benchmark  
+future Election Staff surveys.  
+
+
+\
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 8, fig.height = 4}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_district_all"]], 
+          boxplots_indexes[["bp_venue_all"]],
+          nrow = 1,
+          label_size = 8, align = 'hv')
+
+```
+**Fig A).** Boxplots of Index values for Voting questions by Staff Role, and Role * Gender 
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Demography Maps
+=====================================
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+### Survey Satisfaction by District
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.width = 20, fig.height = 10}
+
+# latticeView(district_satisfaction_choropleth, 
+#             district_dissatisfaction_choropleth,
+#             
+#             ncol = 2,  sync = "none", sync.cursor = FALSE,
+#             no.initial.sync = TRUE)
+
+district_CALD_choropleth
+
+
+```
+
+<!-- \ -->
+
+### Survey Satisfaction by District
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.width = 20, fig.height = 10}
+
+
+district_ATSI_choropleth
+
+
+```
+
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Index analysis
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The Charts below show the Index values for questions realting to Voting, broken down by 
+Election Staff Role and Demographic. First we have the index Voting Index Values for each 
+Role (Fig A).
+
+\
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 12, fig.height = 6}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_district_all"]], 
+          boxplots_indexes[["bp_venue_all"]],
+          nrow = 1,
+          label_size = 8, align = 'hv')
+
+```
+**Fig A).** Boxplots of Index values for Voting questions by Staff Role, and Role * Gender 
+
+\
+
+Then we have the Voting Index Values for each Role * CALD and Language (Fig B).
+
+\
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, fig.align = "center", fig.width = 12, fig.height = 6}
+
+## Arrange a grid
+plot_grid(boxplots_indexes[["bp_em_all"]], 
+          boxplots_indexes[["bp_soa_all"]], 
+          nrow = 1,
+          label_size = 8, align = 'hv')
+
+```
+**Fig B).** Boxplots of Index values for Voting questions by Staff Role *  CALD and Language
+
+\
+
+Then we have the Voting Index Values for each Role * Disability and Indigenous status (Fig C).
+
+\
+
+
+Column {data-width = 2}
+-----------------------------------------------------------------------
+
+
+Demography Plots
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The indexes have been aggregated into a series of scatterplot matrices. These 
+plot the indexes for each business topic at the district level in relation to 
+each other, and also in relation to the voting workload. The variable 'District Workload'   
+is the TotalVotes / Total_projections for each district (**Fig A**). 
+Both variables are proxies for the stress each staff member would be under. 
+
+\
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width=10, fig.height=3.5}
+
+dist.votes.plot
+
+```     
+**Fig A).** Histograms of the difference between projected and total votes at the district level.    
+The remotess categories are taken from the ABS : https://www.abs.gov.au/websitedbs/d3310114.nsf/home/remoteness+structure.    
+
+\
+
+
+The values in the top half of the matrix (**Fig B**) represent the correlation coefficents 
+- these are measures of the strength of the relationships between variables, 
+ranging from -1 (strong negative relationship) to +1 (strong positive). To read 
+the scatterplot matrix, look down the columm to a particular scatterplot for the x-variable, 
+(EG "Informal" for Informal rate) then across the row for the y-variable (EG High/Low SES). 
+EG wealthier metro districts had lower informal voting rates, and vice versa. Similarly the 
+district-level workload has a negative corrleation with the informal voting rate 
+in each district: districts with higher workloads tended to have lower informal voting rates. 
+
+\
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width=14, fig.height=10}
+
+district_work_ses_remotess_plot
+
+```      
+**Fig B).** Scatterplot of district-level workload for SG19 vs. informal votes and Socieoecomic status, by ABS remoteness category.   
+
+\
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA, fig.align = "center", fig.width=14, fig.height=10}
+
+district_work_ses_CALD_plot
+
+```      
+**Fig c).** Scatterplot of district-level workload for SG19 vs. informal votes and Socieoecomic status, by ABS CALD category.    
+
+\
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+

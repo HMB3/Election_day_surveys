@@ -1,0 +1,262 @@
+---
+title: "Staffing"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+\
+\
+\
+
+## **`r 'Q170'`**
+```{r M1, fig.width = 10, fig.height = 8}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "M1") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$M1_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['M1']], 50), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$M1, c('election', 'office', 'voting'))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q171'`**
+```{r M2, fig.width = 10, fig.height = 10}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "M2") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role         <- role_list$M2_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['M2']], 50), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$M2, c('candidates', 'candidate', 'nominations'))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q172'`**
+```{r M3, fig.width = 20, fig.height = 8}
+
+plots_yesno[['M3_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q173'`**
+```{r M3a, fig.width = 24, fig.height = 8}
+
+ord5_plots_sub[['M3a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q174'`**
+```{r M3b, fig.width = 10, fig.height = 10}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "M3b") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$M3b_Roles
+  
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['M3b']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$M3b, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q175'`**
+```{r M3c, fig.width = 18, fig.height = 8}
+
+if(nrow(Survey_data_complete %>% dplyr::filter(!is.na(M3c))) > 0) {
+  
+  M3c_graph
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q176'`**
+```{r M4, fig.width = 20, fig.height = 8}
+
+if (is.null(plots_yesno[['M4_graph']]) == FALSE) {
+  
+  plots_yesno[['M4_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q177'`**
+```{r M4a, fig.width = 24, fig.height = 8}
+
+if (is.null(ord5_plots_sub[['M4a_graph']]) == FALSE) {
+  
+  ord5_plots_sub[['M4a_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+
+\
+\
+\
+
+## **`r 'Q178'`**
+```{r M4b, fig.width = 20, fig.height = 8}
+
+if(nrow(Survey_data_complete %>%
+        dplyr::filter(!is.na(M4b))) > 0) {
+  
+  M4b_graph
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Election Support Verbatims'`**
+
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Support_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+<!--           caption    = 'Election Support Questions with Verbatim responses', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Support_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Support_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Verbatim responses to Voting Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Support_verbatim)), fontSize = "12pt")
+
+```
+

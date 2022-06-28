@@ -1,0 +1,167 @@
+---
+title: "LG21 :: Demographic Survey Analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    css: styles_LG_survey_font.css
+---
+
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+
+Demography Plots
+=====================================
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+\
+
+The following demohgraphic analysis is based on Voting questions in the LG21 staff survey,    
+using only complete responses (n = 1356). These demographic analyses can be used to benchmark    
+future Election Staff surveys. In the formatted staff survey data table, rows are people   
+(n = 1356), and the columns are questions (n = 382). The original data has been transformed,   
+so every staff response (i.e. row) is assgined an Index score between -1 (negative responses)   
+and 1 (positive responses).  
+
+\
+
+The variable 'District Workload' is the TotalVotes / Total_projections for each district (**Fig A**).   
+Figure A). Shows how the district workload is distributed across districts in different remoteness   
+categories. The District workload is an indirect approximation for the stress the staff working at   
+each venue would have been under.   
+
+\
+
+```{r fig.align = "center", fig.width=12, fig.height=5}
+
+dist.votes.plot
+
+```     
+
+\
+
+**Fig A).** Histograms of the difference between projected and total votes at the district level.    
+The remotess categories are taken from the ABS : https://www.abs.gov.au/websitedbs/d3310114.nsf/home/remoteness+structure.    
+
+\
+
+
+The numerical indexes for each topic have been aggregated into a series of scatterplots. 
+These plots show the indexes for each business topic at the district level, in relation 
+to each other, and also in relation to the voting workload. The values in the top half of the 
+scatterplot matrices (**Fig B**) represent the correlation coefficents - these are measures of 
+the strength of the relationships between variables, ranging from -1 (strong negative relationship) 
+to +1 (strong positive). To read the scatterplot matrix, look down the columm to a particular 
+scatterplot for the x-variable, (EG "Informal" for Informal rate) then across the row for the 
+y-variable (EG "High SES" for high socioeconomic status). For example, wealthier metro districts 
+had lower informal voting rates, and vice versa. Similarly, the district-level workload has 
+a negative corrleation with the informal voting rate in each district: districts with higher 
+workloads tended to have lower informal voting rates. These relationships were stronger
+for Districts in the major cities of Australia, than for Inner Regional or Outer Regional
+Districts. However, the strength of these relationships were similar across CALD or Non-CALD 
+districts (**Fig C**).
+
+\
+
+```{r fig.align = "center", fig.width=12, fig.height=10}
+
+venue_work_ses_remotess_plot
+
+```      
+
+\
+
+**Fig B).** Scatterplot of district-level workload for LG21 vs. informal votes and Socieoecomic status, by ABS remoteness category.   
+
+\
+
+<!-- ```{r fig.align = "center", fig.width=12, fig.height=10} -->
+
+<!-- venue_work_ses_ -->
+
+<!-- ```       -->
+
+<!-- \ -->
+
+<!-- **Fig c).** Scatterplot of district-level workload for LG21 vs. informal votes and Socieoecomic status, by ABS CALD category.     -->
+
+<!-- \ -->
+
+```{r fig.align = "center", fig.width=12, fig.height=10}
+
+venue_work_ses_remotess_WHS_plot
+
+```      
+
+\
+
+**Fig D).** Scatterplot of district-level WHS index for LG21 vs. Socieoecomic status, by ABS remoteness category.    
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Demography Maps
+=====================================
+
+\
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+
+Column {data-width = 12}
+-----------------------------------------------------------------------
+
+### **Fig D). District Satisfaction and CALD **
+The map below shows the % CALD for each district, in relation to satisfaction responses for the LG21 staff survey.
+\
+```{r comment = NA, fig.width = 20, fig.height = 10}
+
+# returning_CALD_choropleth
+
+```
+
+\
+
+### **Fig E). District Satisfaction and ATSI **
+The map below shows the % ATSI for each district, in relation to satisfaction responses for the LG21 staff survey.
+\
+```{r comment = NA, fig.width = 20, fig.height = 10}
+
+# returning_ATSI_choropleth
+
+```
+
+
+
+Column {data-width = 1}
+-----------------------------------------------------------------------
+
+

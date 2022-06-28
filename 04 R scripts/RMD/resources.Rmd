@@ -1,0 +1,470 @@
+---
+title: "Resources"
+output:
+  html_document:
+    toc: true               # Table of content true
+    toc_depth: 4            # Up to three depths of headings (specified by #, ## and html_document
+    toc_float: true
+    number_sections: false  # If you want number sections at each table header
+  #   theme: united           # Many options for theme, this one is my favorite.
+  #   highlight: tango        # Specifies the syntax highlighting style
+  #   css: styles_demography.css
+  # revealjs::revealjs_presentation:
+  #   dev: 'svg'
+  #   self_contained: false
+  #   reveal_plugins: ["notes", "search"]
+  #   reveal_options:
+  #     slideNumber: true
+  #     previewLinks: true
+  # word_document:
+  #   always_allow_html: yes
+---
+
+\
+\
+\
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+
+## **`r 'Q39'`**
+```{r Q39, fig.width = 25, fig.height = 10}
+
+ord5_plots_sub[['D1_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q40'`**
+```{r Q40,  fig.width = 10, fig.height = 5, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D1a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$D1a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2, 3), nrow = 3), heights = c(1, 7, 1))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D1a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D1a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q41'`**
+```{r Q41, fig.width = 15, fig.height = 8}
+
+plots_yesno[['D2_graph']]
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q42'`**
+```{r Q42, fig.width = 10, fig.height = 10, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D2a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$D2a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  # layout(matrix(c(1, 2, 3), nrow = 3), heights = c(1, 7, 1))
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D2a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D2a, c("register", "registers"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+
+## **`r 'Q43'`**
+```{r Q43, fig.width = 16, fig.height = 6}
+
+ord3_plots_sub[['D3_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q44'`**
+```{r Q44, fig.align = 'center', fig.width = 10, fig.height = 8.5}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D3a") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$D3a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D3a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D3a, c("instructions", "vote"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+
+```
+
+\
+\
+\
+
+## **`r 'Q45'`**
+```{r Q45, fig.width = 15, fig.height = 6}
+
+plots_yesno[['D4_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q46'`**
+```{r Q46, fig.width = 15, fig.height = 8}
+
+plot_histograms[['D4a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q47'`**
+```{r Q47, fig.width = 15, fig.height = 8}
+
+plots_yesno[['D5_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q48'`**
+```{r Q48, fig.width = 10, fig.height = 8}
+
+plot_histograms[['D5a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q49'`**
+```{r Q49, fig.width = 15, fig.height = 8}
+
+plots_yesno[['D6_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q50'`**
+```{r Q50, fig.width = 15, fig.height = 8}
+
+plot_histograms[['D6a_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q51'`**
+```{r Q51, fig.width = 20, fig.height = 6}
+
+
+if (is.null(ord3_plots_sub[['D7_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['D7_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q52'`**
+```{r Q52, fig.width = 20, fig.height = 6}
+
+if (is.null(ord3_plots_sub[['d7_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['d7_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q53'`**
+```{r Q53, fig.width = 10, fig.height = 6, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D7a") %>% 
+  .$BaseSize
+
+
+if  (Count > 3) {
+  
+  Role         <- role_list$D7a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D7a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D7a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q54'`**
+```{r 54, fig.width = 20, fig.height = 8}
+
+if (is.null(ord3_plots_sub[['D8_graph']]) == FALSE) {
+  
+  ord3_plots_sub[['D8_graph']]
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q55'`**
+```{r Q55, fig.width = 10, fig.height = 10, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D8a") %>% 
+  .$BaseSize
+
+
+if  (Count > 3) {
+  
+  Role         <- role_list$D8a_Roles
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D8a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D8a, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("Insufficient data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q56'`**
+```{r Q56, fig.width = 25, fig.height = 8}
+
+ord5_plots_sub[['D9_graph']]
+
+```
+
+\
+\
+\
+
+## **`r 'Q57'`**
+```{r Q57, fig.width = 10, fig.height = 8, fig.align = 'center', warning = FALSE}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D9a") %>% 
+  .$BaseSize
+
+
+if (Count > 3) {
+  
+  Role <- role_list$D9a_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D9a']], 40), cex = 2, font = 2)
+  
+  SurveyWordCloud(Survey_data$D9a, c("roll", "rolls"))
+  text(x = 0.5, y = 0, Role_caption, cex = 1.5, font = 3)
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+## **`r 'Q58'`**
+```{r Q58, fig.width = 10, fig.height = 8.5, fig.align = 'center'}
+
+Count <- BaseCount %>%
+  filter(QuestionNumber == "D10") %>% 
+  .$BaseSize
+
+if (Count > 3) {
+  
+  Role <- role_list$D10_Roles
+  
+  Role_caption <- paste(c(Role, Count, ' Responses'), collapse = " ") %>% str_wrap(50)
+  layout(matrix(c(1, 2), nrow = 2), heights = c(1, 4))
+  par(mar = rep(0, 4))
+  plot.new()
+  text(x = 0.5, y = 0.5, str_wrap(label_list[['D10']], 40), cex = 1.8, font = 2)
+  
+  SurveyWordCloud(Survey_data$D10, c("candidates", "candidate"))
+  
+  text(x = 0.5, y = -0.028, Role_caption, cex = 1.2, font = 3)
+  
+  
+} else {
+  print("No data for this question")
+}
+
+```
+
+\
+\
+\
+
+
+## **`r 'Resource Verbatims'`**
+
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
+
+<!-- datatable(Resource_verbatims_LUT, -->
+
+<!--           rownames   = FALSE, -->
+<!--           extensions = 'Buttons', -->
+<!--           filter     = 'top', -->
+
+<!--           options      = list( -->
+<!--             pageLength = 10 -->
+<!--             ,dom       = 'tip')) %>% -->
+
+<!--   formatStyle(columns = rep(1:length(Resource_verbatims_LUT)), fontSize = "12pt") -->
+
+<!-- ``` -->
+
+<!-- \ -->
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+datatable(Survey_Resource_verbatim_no %>% select(-'ReturningOffice: ', -'VenueName: '),
+          
+          rownames   = FALSE,
+          extensions = 'Buttons',
+          filter     = 'top',
+          caption    = 'Verbatim responses to Resource Questions in the Local Election Staff Survey',
+          
+          options      = list(
+            pageLength = 10,
+            dom        = 'Btip',
+            buttons    = c( 'csv', 'excel')),
+          
+          height = '1200px') %>%
+  
+  formatStyle(columns = rep(1:length(Survey_Resource_verbatim_no)), fontSize = "12pt")
+
+```
+

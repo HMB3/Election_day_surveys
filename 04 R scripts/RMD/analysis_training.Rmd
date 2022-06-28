@@ -1,0 +1,92 @@
+---
+title: Training
+output: 
+  html_document:
+    theme: lumen           
+    highlight: tango
+    css: styles.css
+---
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+
+## {.tabset .tabset-fade}
+
+### Index analysis
+
+\
+
+The following analysis is based on training questions in the LG21 staff survey, using only complete responses 
+(`r format(complete_responses, big.mark=",")`). The original survey response data have been  transformed, so every
+staff response is assigned an index score between 1 (most negative responses) and 5 (most positive responses). Only selected questions contributed to the index for each topic. See the 'Analysis - Index questions' page for a list of questions used in each index and a description of how to read the box plots.
+
+The boxplots below (Fig A) show index scores for training questions for each respondent compared to other index topics (left) and the training index scores for respondents broken down by role (right).
+
+Overall, responses to training questions were more positive than for most other topics. Across roles, SOA's tended to provide slightly more negative feedback than staff in other roles. 
+
+\
+
+#### **Fig A). Survey responses, aggregated by all topics (left), and by role for training questions (right, note this excludes ROs)**
+
+```{r fig.align = "center", fig.width = 15, fig.height = 7}
+
+## Arrange a grid
+plot_grid(bp_resposes_all, 
+          respondent_role_boxplots[["Training_boxplot"]],
+          nrow = 1,
+          label_size = 5, align = 'hv')
+```
+
+
+\
+
+Index scores were also broken down by staff demographics and whether they are located in a metropolitan or regional area (Fig B). The analysis below suggests that there were no differences in response to training questions across the demographic categories (left). And, similarly, there were also no differences across metropolitan and regional areas (right).
+
+\
+
+#### **Fig B). Survey responses by demographics and remoteness for training questions (note, categories are not necessarily mutually exclusive)**
+
+```{r fig.align = "center", fig.width = 15, fig.height = 7}
+
+## Arrange a grid
+plot_grid(respondent_demo_boxplots[["Training_boxplot"]], 
+          respondent_remoteness_boxplots[["Training_boxplot"]],
+          nrow = 1,
+          label_size = 5, align = 'hv')
+
+
+```
+
+
+\
+
+
+### Index Maps
+
+\
+
+#### **Fig C). Training survey responses by RO Region**
+
+The map below shows the index of survey responses for training questions in the LG21 staff survey. The underlying data are the same index
+values used in the boxplots, but are the average of all the staff responses within each RO Region (the blue boundaries on the map). The blank regions are non-client or uncontested Councils (Central Coast, Fairfield, Penrith, Wingecarribee), unincorporated areas of NSW and the ACT.  
+
+```{r fig.align = "center", fig.width = 10, fig.height = 10}
+
+RO_region_polygon_index_maps[["Training_polygon_map"]]
+
+```
+
+
+

@@ -1,0 +1,135 @@
+---
+title: Index questions
+output: 
+  html_document:
+    theme: lumen           
+    highlight: tango
+    css: styles.css
+---
+
+<style type="text/css">
+
+.main-container {
+max-width: 1400px;
+margin-left: 180px;
+margin-right: auto;
+
+}
+
+</style>
+
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo          = FALSE, 
+                      warning       = FALSE, 
+                      message       = FALSE, 
+                      warning       = FALSE, 
+                      fig.fullwidth = TRUE, 
+                      paged.print   = FALSE, 
+                      comment       = NA)
+
+```
+
+
+## {.tabset .tabset-fade}
+
+### Index questions
+
+
+<!-- Set alignment property for the following container -->
+<div align="left">
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, comment = NA}
+
+datatable(LUT_index
+          # Set width of table in container, requires fillContainer to be set to FALSE
+          ,width = '95%'
+          ,fillContainer = FALSE
+          
+          ,rownames   = FALSE
+          ,extensions = 'Buttons'
+          ,filter     = 'top'
+          ,caption    = 'Table of Questions for Survey Index'
+          
+          ,options = list(
+            pageLength = 100
+            ,dom = 'tip'
+            ,scrollY = TRUE
+            
+            # Control individual column width (requires autoWidth to be set to TRUE)
+            # targets argument refers to column postitions which are zero indexed
+            ,autoWidth = TRUE
+            ,columnDefs = list(list(width  = '150px', targets = c(0))
+                               ,list(width = '50px', targets = c(1, 3))
+            )))
+
+```
+</div>
+
+
+
+### Index Calculation
+
+
+\
+
+In the formatted staff survey data table, rows are people (i.e. 'respondents', n=10899), and the columns  
+are questions (n = 382, indcluding all sub-questions). To analyse the survery results numerically, the original   
+survey responses have been transformed, so every staff response (i.e. row) is assgined a numerical, ordinal   
+value representing postive or negative responses (i.e. a whole number from high to low). For example, for   
+the five-scale satisfaction questions, transformed numerical values are as follows:  
+
+\
+
+**Very satisfactory   ~ 5**  
+**Satisfactory        ~ 4**  
+**Neutral             ~ 3**  
+**Unsatisfactory      ~ 2**  
+**Very unsatisfactory ~ 1**      
+
+\
+
+For the questions in other formats (e.g. yes/no/uncertain), we use two different transformations -  
+one where yes is positive, and one where no is positive (depending on the context of the question):  
+
+\
+
+**Yes       ~ 3 (or 1)**  
+**Uncertain ~ 2 (2)**  
+**No        ~ 1 (or 3)**  
+
+\
+
+Using these numeric values, the overall index for each topic is calculated as the sum of all questions  
+in that theme for each respondent (i.e. row), divided by the maximum possible score for each topic -  
+but only for those people who answered each question in that topic. For example, the Staffing Index has   
+four questions, two yes/no questions, and two satisfaction questions, with a maximum score of 16. If   
+a particular respondent only answered the two satisfaction staffing questions, their individual staffing   
+score would only be divided by the max score of 10 (2*5). However, the score of a respondent who answered  
+all staffing questions would be divied by the maximum of 16.    
+
+\
+
+These respondent-level indexes give a better indication of the variation in survey responses across the  
+whole survey, rather than aggregating the index scores to some arbitary unit (for example the spatial unit  
+of Venue or the RO Office where each staff member worked). The boxplots below show the variation in the index  
+scores for each topic across all responents, using the standard format of the five-number summary (**Fig A**).  
+The minimum and maximum values are shown by the whiskers, the first quartile (Q1) is the lower half of each  
+coloured box, the median value (centre of the distribution) is the solid black line, and the third quartile  
+(Q3) is the upper half of the coloured box. For example, Index values for the IS topic varied more than for  
+the Training or WHS Topics, due to the nature of the questions chosen for each Topic's index. To further  
+illustrate the point, the variation in each index is also given in table form below the boxplot.    
+
+\
+
+```{r fig.align = "left", fig.width = 10, fig.height = 7}
+
+bp_resposes_all
+
+```
+**Fig A).** Boxplots of individual Survey Responses for each Topic**
+
+\
+
+
