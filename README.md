@@ -1,4 +1,4 @@
-# Election_dashboards
+# Election Day Survey
 The analysis in this report is based on the results of the Election Staff Survey, following the 
 Local Government Election held on 4th December, 2021. The results use only complete survey responses. 
 
