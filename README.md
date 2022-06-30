@@ -27,32 +27,5 @@ OA's (less than 20 per cent; see Table 1).
 | Office Assistant     | 4698  | 826       | 18                |
 
 
-# Work health safety guidelines 
-The NSWEC implemented a new suite of WHS guidelines at this election, and the results show that most staff   
-reported compliance with the measures. Figure 1 shows that the vast majority of staff stated they finished   
-work before the mandated 11pm cut-off on election night. Although 12 per cent of respondents had some WHS   
-concerns (Q169), overall, the WHS and COVID-safe measures were well received. Ninety five per cent of   
-respondents were satisfied with the COVID-safe measures (Q2).
 
-
-![](https://github.com/HMB3/Election_day_surveys/blob/master/output/finnish_time.png?raw=true)
-
-
-
-**Figure 1.** Number of staff finishing work at different times on Election Day. Each grey bar represents 
-the number of staff finishing at a given time. The red line is the overall median finishing time (the middle 
-value of all the finishing times). This plot shows that the vast majority of staff completed work prior to 11pm 
-on election night.
-
-
-
-# Overall employee satisfaction 
-Election staff were generally satisfied with how the election was run, with most questions across all topics having 
-satisfaction ratings greater than 80 per cent, and dissatisfaction ratings less than 10 per cent (Figure 5). 
-
-
-![](https://github.com/HMB3/Election_day_surveys/blob/master/output/satisfaction_graph.png?raw=true)
-
-**Figure 2.** Bar-chart of combined satisfaction responses to survey questions across topics. Only 'satisfaction' 
-type questions are included in this plot, and the RO/RO Office topic was only answered by **three respondents**.
 
