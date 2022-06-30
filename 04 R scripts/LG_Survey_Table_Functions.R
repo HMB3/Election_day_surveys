@@ -420,18 +420,20 @@ percent_num_form <- function(x) {
 ## Create a single choice table  ----
 SingleChoiceTable <- function(DataSet, 
                               QID, 
-                              Percent = FALSE) {
+                              Percent) {
   
   Cnum <- which(colnames(DataSet) == QID)
   
   if(Percent == TRUE) {
     
-    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'no')) %>% 
-      dplyr::select(QID, Count = Freq) %>%
+    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'no')) %>%
+      dplyr::select(Var1, Count = Freq) %>%
       left_join(data.frame(prop.table(table(DataSet[,Cnum], 
                                             useNA = 'no'))) %>% 
-                  dplyr::select(QID, Percentage = Freq)) %>% 
-      dplyr::mutate(Percentage = formattable::percent(Percentage,2))
+                  dplyr::select(Var1, Percentage = Freq)) %>% 
+      
+      dplyr::mutate(Percentage = formattable::percent(Percentage,2)) %>% 
+      dplyr::rename(!!QID := Var1)
     
   }
   

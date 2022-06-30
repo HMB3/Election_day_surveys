@@ -397,30 +397,37 @@ make_true_NA <- function(x) if(is.character(x)||is.factor(x)){
 
 # r4spss ------------------------------------------------------------------
 
-SingleChoiceTable <- function(DataSet, QID, Percent = FALSE) {
-  
+SingleChoiceTable <- function(DataSet, 
+                              QID, 
+                              Percent) {
   
   Cnum <- which(colnames(DataSet) == QID)
   
-  
   if(Percent == TRUE) {
     
-    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'ifany')) %>% select(Var1, Count = Freq) %>%
-      left_join(data.frame(prop.table(table(DataSet[,Cnum], useNA = 'ifany'))) %>% select(Var1, Percentage = Freq)) %>% 
-      mutate(Percentage = formattable::percent(Percentage,2))
+    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'no')) %>%
+      dplyr::select(Var1, Count = Freq) %>%
+      left_join(data.frame(prop.table(table(DataSet[,Cnum], 
+                                            useNA = 'no'))) %>% 
+                  dplyr::select(Var1, Percentage = Freq)) %>% 
+      
+      dplyr::mutate(Percentage = formattable::percent(Percentage,2)) %>% 
+      dplyr::rename(!!QID := Var1)
     
   }
   
   else if(Percent == FALSE) {
-    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'ifany')) %>% select(Var1, Count = Freq) %>%
+    ram1 <- data.frame(table(DataSet[,Cnum], useNA = 'no')) %>% 
+      dplyr::select(QID, Count = Freq) %>%
       
-      left_join(data.frame(prop.table(table(DataSet[,Cnum], useNA = 'ifany'))) %>% select(Var1))
+      left_join(data.frame(prop.table(table(DataSet[,Cnum], 
+                                            useNA = 'no'))) %>% 
+                  dplyr::select(QID))
   }
-  
   colnames(ram1)[1] <- colnames(DataSet)[Cnum]
-  
   return(ram1)
 }
+
 
 
 
