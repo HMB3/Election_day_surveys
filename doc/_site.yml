@@ -3,7 +3,7 @@ name: "LG21 Local Government Election Staff Survey"
 
 
 
-output:
+output_dir: 'docs'
   html_document:
     theme: lumen
     highlight: tango
