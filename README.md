@@ -1,6 +1,6 @@
 # Election Day Survey
-The analysis in this report is based on the results of the Election Staff Survey, following the 
-Local Government Election held on 4th December, 2021. The results use only complete survey responses. 
+The analysis in this report is based on the results of an Election Staff Survey, following the 
+NSW Local Government Election held on 4th December, 2021. The results use only complete survey responses. 
 
 
 
@@ -11,10 +11,14 @@ rate of 35 per cent). The highest response rate was from Polling Place Managers 
 OA's (less than 20 per cent; see Table 1). 
 
 
-# Table 1
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+| Role                 | Staff | Responses | Response Rate (%) |
+|----------------------|-------|-----------|-------------------|
+| Polling Place        | 2145  | 1132      | 53                |
+| Returning Office     | 70    | 37        | 53                |
+| Deputy Polling Place | 2137  | 982       | 46                |
+| Senior Office        | 285   | 115       | 40                |
+| Election Official    | 19484 | 6881      | 35                |
+| Office Assistant     | 4698  | 826       | 18                |
 
 
 # Work health safety guidelines 
