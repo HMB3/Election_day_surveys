@@ -35,7 +35,7 @@ concerns (Q169), overall, the WHS and COVID-safe measures were well received. Ni
 respondents were satisfied with the COVID-safe measures (Q2).
 
 
-![](https://github.com/HMB3/Election_day_surveys/blob/master/06 Graphical output/finnish_time.png?raw=true)
+![](https://github.com/HMB3/Election_day_surveys/blob/master/output/finnish_time.png?raw=true)
 
 
 
@@ -51,7 +51,7 @@ Election staff were generally satisfied with how the election was run, with most
 satisfaction ratings greater than 80 per cent, and dissatisfaction ratings less than 10 per cent (Figure 5). 
 
 
-![](https://github.com/HMB3/Election_day_surveys/blob/master/06 Graphical output/satisfaction_graph.png?raw=true)
+![](https://github.com/HMB3/Election_day_surveys/blob/master/output/satisfaction_graph.png?raw=true)
 
 **Figure 2.** Bar-chart of combined satisfaction responses to survey questions across topics. Only 'satisfaction' 
 type questions are included in this plot, and the RO/RO Office topic was only answered by **three respondents**.
