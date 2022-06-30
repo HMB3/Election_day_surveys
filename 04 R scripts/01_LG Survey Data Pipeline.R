@@ -196,6 +196,7 @@ source('./04 R scripts/06c_LG Survey Demography Plot Formatter.R', echo = TRUE)
 
 
 ## Build the dataset, and slice it anyway you like : Age / Gender / etc
+## load('./04 R scripts/Survey_data_output.RData')
 
 
 ## Create indexes of survey responses - this step needs more work to integrate projections, etc.

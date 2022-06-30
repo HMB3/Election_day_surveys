@@ -12,10 +12,9 @@ OA's (less than 20 per cent; see Table 1).
 
 
 # Table 1
-| One | Two | Three |
-| --- | --- | --- |
-| Apples | Oranges | Pears |
-| Cakes | Donuts | Sweet Bread |
+Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
 
 
 # Work health safety guidelines 
