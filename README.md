@@ -1,6 +1,12 @@
 # Election Day Survey
 The analysis in this report is based on the results of an Election Staff Survey, following the 
-NSW Local Government Election held on 4th December, 2021. The results use only complete survey responses. 
+NSW Local Government Election held on 4th December, 2021. The results use only complete survey 
+responses. Election staff surveys have a consistently high response rate, usually with upwards of 
+10 thousand respondents across seven main job roles. There are currently 184 survey questions.
+While it’s great to have lots of responses, collecting such a large, complex data set creates 
+major challenges for timely analysis and dissemination of insights. We present here an automated 
+report that provide simple results to business users within days of the survey closing. 
+Each page shows responses to individual questions by topic.
 
 
 
@@ -29,6 +35,8 @@ concerns (Q169), overall, the WHS and COVID-safe measures were well received. Ni
 respondents were satisfied with the COVID-safe measures (Q2).
 
 
+![](https://github.com/HMB3/Election_day_surveys/blob/master/doc/whs_files/figure-html/L10-1.png?raw=true)
+
 
 
 **Figure 1.** Number of staff finishing work at different times on Election Day. Each grey bar represents 
@@ -40,11 +48,11 @@ on election night.
 
 # Overall employee satisfaction 
 Election staff were generally satisfied with how the election was run, with most questions across all topics having 
-satisfaction ratings greater than 80 per cent, and dissatisfaction ratings less than 10 per cent (see Table of 
-Contents: All satisfaction responses; Figure 5). 
+satisfaction ratings greater than 80 per cent, and dissatisfaction ratings less than 10 per cent (Figure 5). 
 
 
+![](https://github.com/HMB3/Election_day_surveys/blob/master/doc/executive_summary_files/figure-html/satisfaction_graph.png?raw=true)
 
-**Figure 5.** Bar-chart of combined satisfaction responses to survey questions across topics. Only 'satisfaction' 
+**Figure 2.** Bar-chart of combined satisfaction responses to survey questions across topics. Only 'satisfaction' 
 type questions are included in this plot, and the RO/RO Office topic was only answered by **three respondents**.
 
